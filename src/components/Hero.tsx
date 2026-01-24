@@ -13,7 +13,7 @@ export default function Hero() {
         <h1>
           The Lost Art of
           <br />
-          <em>American Cartography</em>
+          <em>Sanborn Typography</em>
         </h1>
         
         <p className="hero-description">
