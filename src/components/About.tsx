@@ -3,7 +3,7 @@ import Link from 'next/link';
 export default function About() {
   return (
     <section style={{
-      padding: '6rem 4rem',
+      padding: '2rem 4rem',
       maxWidth: '900px',
       margin: '0 auto',
       textAlign: 'center'
