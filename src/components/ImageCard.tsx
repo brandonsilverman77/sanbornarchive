@@ -11,35 +11,52 @@ interface ImageCardProps {
 export default function ImageCard({ map, onClick }: ImageCardProps) {
   return (
     <div
-      className="relative cursor-pointer transition-transform duration-300 hover:-translate-y-2 group"
       onClick={onClick}
+      style={{
+        cursor: 'pointer',
+        transition: 'transform 0.3s ease',
+      }}
+      onMouseEnter={(e) => e.currentTarget.style.transform = 'translateY(-8px)'}
+      onMouseLeave={(e) => e.currentTarget.style.transform = 'translateY(0)'}
     >
-      <div className="bg-white p-2 md:p-3 shadow-[0_2px_4px_rgba(44,36,22,0.04),0_8px_16px_rgba(44,36,22,0.06)] transition-shadow duration-300 group-hover:shadow-[0_4px_8px_rgba(44,36,22,0.06),0_16px_32px_rgba(44,36,22,0.1)]">
-        <div className="relative aspect-[5/6] overflow-hidden">
+      <div style={{
+        background: 'white',
+        padding: '0.75rem',
+        boxShadow: '0 2px 4px rgba(44,36,22,0.04), 0 8px 16px rgba(44,36,22,0.06)',
+      }}>
+        <div style={{
+          position: 'relative',
+          aspectRatio: '5/6',
+          overflow: 'hidden',
+        }}>
           <Image
             src={map.thumbnail}
             alt={`${map.city}, ${map.state}`}
             fill
-            className="object-cover"
+            style={{ objectFit: 'cover' }}
             sizes="(max-width: 640px) 50vw, (max-width: 1024px) 33vw, 25vw"
           />
-          
-          {/* Hover Overlay */}
-          <div className="absolute inset-0 bg-[var(--color-ink)]/85 flex flex-col justify-center items-center gap-3 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-            <button className="px-4 md:px-5 py-2 md:py-2.5 bg-[var(--color-cream)] text-[var(--color-ink)] font-body text-xs md:text-sm hover:bg-white transition-colors">
-              View Details
-            </button>
-            <button className="px-4 md:px-5 py-2 md:py-2.5 border border-[var(--color-cream)] text-[var(--color-cream)] font-body text-xs md:text-sm hover:bg-[var(--color-cream)] hover:text-[var(--color-ink)] transition-colors">
-              Get a Print
-            </button>
-          </div>
         </div>
         
-        <div className="pt-2 md:pt-3 px-1">
-          <h3 className="font-display text-sm md:text-base font-medium text-[var(--color-ink)] mb-0.5">
+        <div style={{
+          paddingTop: '0.75rem',
+          paddingLeft: '0.5rem',
+          paddingRight: '0.5rem',
+          paddingBottom: '0.25rem',
+        }}>
+          <h3 style={{
+            fontFamily: 'Playfair Display, Georgia, serif',
+            fontSize: '1rem',
+            fontWeight: 500,
+            color: '#2c2416',
+            marginBottom: '0.25rem',
+          }}>
             {map.city}
           </h3>
-          <p className="text-xs md:text-sm text-[var(--color-ink-faded)]">
+          <p style={{
+            fontSize: '0.875rem',
+            color: '#6b5d4a',
+          }}>
             {map.state} · {map.year}
           </p>
         </div>
