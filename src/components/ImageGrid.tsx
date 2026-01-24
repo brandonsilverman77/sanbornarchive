@@ -102,7 +102,7 @@ export default function ImageGrid() {
         </div>
         
         <p style={{ color: '#6b5d4a', fontSize: '0.875rem', marginTop: '1rem', textAlign: 'center' }}>
-          Showing {filteredMaps.length} of {Maps.length} maps
+          Showing {filteredMaps.length} of {maps.length} maps
         </p>
       </div>
 
