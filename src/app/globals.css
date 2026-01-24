@@ -143,7 +143,7 @@ nav ul a:hover {
 }
 
 .hero-label {
-  font-size: 0.75rem;
+  font-size: 0.875rem;
   letter-spacing: 0.2em;
   text-transform: uppercase;
   color: var(--color-ink-faded);
@@ -152,7 +152,7 @@ nav ul a:hover {
 
 .hero h1 {
   font-family: var(--font-display);
-  font-size: 3.5rem;
+  font-size: 4.5rem;
   font-weight: 500;
   line-height: 1.1;
   margin-bottom: 1.5rem;
@@ -165,7 +165,7 @@ nav ul a:hover {
 }
 
 .hero-description {
-  font-size: 1.125rem;
+  font-size: 1.35rem;
   color: var(--color-ink-light);
   line-height: 1.7;
   margin-bottom: 2.5rem;
@@ -185,14 +185,14 @@ nav ul a:hover {
 
 .hero-stat-number {
   font-family: var(--font-display);
-  font-size: 2.5rem;
+  font-size: 3.5rem;
   font-weight: 500;
   color: var(--color-ink);
   line-height: 1;
 }
 
 .hero-stat-label {
-  font-size: 0.875rem;
+  font-size: 1rem;
   color: var(--color-ink-faded);
   margin-top: 0.25rem;
 }
@@ -201,10 +201,10 @@ nav ul a:hover {
   display: inline-flex;
   align-items: center;
   gap: 0.5rem;
-  padding: 0.875rem 1.75rem;
+  padding: 1rem 2rem;
   background: var(--color-ink);
   color: var(--color-cream);
-  font-size: 0.95rem;
+  font-size: 1.1rem;
   font-weight: 500;
   text-decoration: none;
   transition: all 0.2s ease;
@@ -245,7 +245,7 @@ nav ul a:hover {
 
 /* About */
 .about-section {
-  padding: 3rem 4rem;
+  padding: 2rem 4rem;
   max-width: 900px;
   margin: 0 auto;
   text-align: center;
@@ -290,6 +290,10 @@ footer p {
     padding-right: 0;
   }
   
+  .hero h1 {
+    font-size: 3.5rem;
+  }
+  
   .hero-description {
     margin-left: auto;
     margin-right: auto;
@@ -318,6 +322,10 @@ footer p {
   }
   
   .hero h1 {
+    font-size: 2.5rem;
+  }
+  
+  .hero-stat-number {
     font-size: 2.5rem;
   }
   
