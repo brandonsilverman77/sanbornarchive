@@ -24,19 +24,42 @@ export default function ImageGrid() {
   });
 
   return (
-    <section id="explore" className="grid-section">
-      <div className="grid-header">
-        <h2>Explore the Collection</h2>
-        <p style={{ color: 'var(--color-ink-light)', marginBottom: '1.5rem' }}>
+    <section 
+      id="explore" 
+      style={{
+        padding: '6rem 4rem',
+        background: '#e8e2d5'
+      }}
+    >
+      <div style={{ maxWidth: '1400px', margin: '0 auto 3rem' }}>
+        <h2 style={{
+          fontFamily: 'Playfair Display, Georgia, serif',
+          fontSize: '2.5rem',
+          fontWeight: 400,
+          marginBottom: '1rem',
+          textAlign: 'center'
+        }}>
+          Explore the Collection
+        </h2>
+        <p style={{ color: '#4a3f2f', marginBottom: '1.5rem', textAlign: 'center' }}>
           Browse by city, state, or year. Every image is freely available for personal use.
         </p>
         
-        <div className="grid-filters">
+        <div style={{ display: 'flex', gap: '1rem', flexWrap: 'wrap', justifyContent: 'center' }}>
           {['all', 'cover', 'title'].map((type) => (
             <button
               key={type}
               onClick={() => setFilter(type)}
-              className={`grid-filter ${filter === type ? 'active' : ''}`}
+              style={{
+                padding: '0.5rem 1rem',
+                background: filter === type ? '#2c2416' : 'transparent',
+                border: '1px solid #d4cbb8',
+                borderColor: filter === type ? '#2c2416' : '#d4cbb8',
+                fontFamily: 'Source Serif 4, Georgia, serif',
+                fontSize: '0.875rem',
+                color: filter === type ? '#f5f1e8' : '#4a3f2f',
+                cursor: 'pointer'
+              }}
             >
               {type === 'all' ? 'All' : type === 'cover' ? 'Cover Pages' : 'Title Pages'}
             </button>
@@ -45,8 +68,15 @@ export default function ImageGrid() {
           <select
             value={stateFilter}
             onChange={(e) => setStateFilter(e.target.value)}
-            className="grid-filter"
-            style={{ minWidth: '120px' }}
+            style={{
+              padding: '0.5rem 1rem',
+              background: 'transparent',
+              border: '1px solid #d4cbb8',
+              fontFamily: 'Source Serif 4, Georgia, serif',
+              fontSize: '0.875rem',
+              color: '#4a3f2f',
+              minWidth: '120px'
+            }}
           >
             <option value="all">All States</option>
             {states.map(state => (
@@ -59,17 +89,30 @@ export default function ImageGrid() {
             placeholder="Search cities..."
             value={searchQuery}
             onChange={(e) => setSearchQuery(e.target.value)}
-            className="grid-filter"
-            style={{ minWidth: '200px' }}
+            style={{
+              padding: '0.5rem 1rem',
+              background: 'transparent',
+              border: '1px solid #d4cbb8',
+              fontFamily: 'Source Serif 4, Georgia, serif',
+              fontSize: '0.875rem',
+              color: '#4a3f2f',
+              minWidth: '200px'
+            }}
           />
         </div>
         
-        <p style={{ color: 'var(--color-ink-faded)', fontSize: '0.875rem', marginTop: '1rem' }}>
+        <p style={{ color: '#6b5d4a', fontSize: '0.875rem', marginTop: '1rem', textAlign: 'center' }}>
           Showing {filteredMaps.length} of {sampleMaps.length} maps
         </p>
       </div>
 
-      <div className="image-grid">
+      <div style={{
+        display: 'grid',
+        gridTemplateColumns: 'repeat(auto-fill, minmax(280px, 1fr))',
+        gap: '2rem',
+        maxWidth: '1400px',
+        margin: '0 auto'
+      }}>
         {filteredMaps.map((map) => (
           <ImageCard
             key={map.id}
