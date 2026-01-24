@@ -27,7 +27,7 @@ export default function ImageGrid() {
     <section 
       id="explore" 
       style={{
-        padding: '6rem 4rem',
+        padding: '3rem 4rem',
         background: '#e8e2d5'
       }}
     >
