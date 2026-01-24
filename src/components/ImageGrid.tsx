@@ -4,7 +4,7 @@ import { useState } from 'react';
 import ImageCard from './ImageCard';
 import MapModal from './MapModal';
 import { MapData } from '@/lib/types';
-import { Maps } from '@/data/maps';
+import { maps } from '@/data/maps';
 
 export default function ImageGrid() {
   const [selectedMap, setSelectedMap] = useState<MapData | null>(null);
