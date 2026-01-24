@@ -4,7 +4,7 @@ import { useState } from 'react';
 import ImageCard from './ImageCard';
 import MapModal from './MapModal';
 import { MapData } from '@/lib/types';
-import { sampleMaps } from '@/data/maps';
+import { Maps } from '@/data/maps';
 
 export default function ImageGrid() {
   const [selectedMap, setSelectedMap] = useState<MapData | null>(null);
@@ -12,9 +12,9 @@ export default function ImageGrid() {
   const [stateFilter, setStateFilter] = useState('all');
   const [searchQuery, setSearchQuery] = useState('');
 
-  const states = [...new Set(sampleMaps.map(m => m.state))].sort();
+  const states = [...new Set(Maps.map(m => m.state))].sort();
 
-  const filteredMaps = sampleMaps.filter(map => {
+  const filteredMaps = Maps.filter(map => {
     const matchesType = filter === 'all' || map.type === filter;
     const matchesState = stateFilter === 'all' || map.state === stateFilter;
     const matchesSearch = searchQuery === '' || 
@@ -102,7 +102,7 @@ export default function ImageGrid() {
         </div>
         
         <p style={{ color: '#6b5d4a', fontSize: '0.875rem', marginTop: '1rem', textAlign: 'center' }}>
-          Showing {filteredMaps.length} of {sampleMaps.length} maps
+          Showing {filteredMaps.length} of {Maps.length} maps
         </p>
       </div>
 
