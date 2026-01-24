@@ -3,11 +3,11 @@
 import { useState } from 'react';
 import ImageCard from './ImageCard';
 import MapModal from './MapModal';
-import { MapData } from '@/lib/types';
+import { MapImage } from '@/lib/types';
 import { maps } from '@/data/maps';
 
 export default function ImageGrid() {
-  const [selectedMap, setSelectedMap] = useState<MapData | null>(null);
+  const [selectedMap, setSelectedMap] = useState<MapImage | null>(null);
   const [filter, setFilter] = useState('all');
   const [stateFilter, setStateFilter] = useState('all');
   const [searchQuery, setSearchQuery] = useState('');
