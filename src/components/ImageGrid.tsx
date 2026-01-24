@@ -12,9 +12,9 @@ export default function ImageGrid() {
   const [stateFilter, setStateFilter] = useState('all');
   const [searchQuery, setSearchQuery] = useState('');
 
-  const states = [...new Set(Maps.map(m => m.state))].sort();
+  const states = [...new Set(maps.map(m => m.state))].sort();
 
-  const filteredMaps = Maps.filter(map => {
+  const filteredMaps = maps.filter(map => {
     const matchesType = filter === 'all' || map.type === filter;
     const matchesState = stateFilter === 'all' || map.state === stateFilter;
     const matchesSearch = searchQuery === '' || 
