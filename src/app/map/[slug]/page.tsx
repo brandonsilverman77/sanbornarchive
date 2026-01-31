@@ -15,15 +15,8 @@ const printSizes = [
 
 // States with missing images on R2 - exclude until uploaded
 const MISSING_STATES = [
-  'Arizona',
-  'Illinois',
   'New Hampshire',
-  'New Mexico',
-  'New York',
-  'North Carolina',
   'North Dakota',
-  'Pennsylvania',
-  'South Carolina',
   'South Dakota',
   'West Virginia',
 ];
