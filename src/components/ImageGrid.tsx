@@ -2,12 +2,9 @@
 
 import { useState } from 'react';
 import ImageCard from './ImageCard';
-import MapModal from './MapModal';
-import { MapImage } from '@/lib/types';
 import { maps } from '@/data/maps';
 
 export default function ImageGrid() {
-  const [selectedMap, setSelectedMap] = useState<MapImage | null>(null);
   const [filter, setFilter] = useState('all');
   const [stateFilter, setStateFilter] = useState('all');
   const [searchQuery, setSearchQuery] = useState('');
@@ -17,15 +14,15 @@ export default function ImageGrid() {
   const filteredMaps = maps.filter(map => {
     const matchesType = filter === 'all' || map.type === filter;
     const matchesState = stateFilter === 'all' || map.state === stateFilter;
-    const matchesSearch = searchQuery === '' || 
+    const matchesSearch = searchQuery === '' ||
       map.city.toLowerCase().includes(searchQuery.toLowerCase()) ||
       map.state.toLowerCase().includes(searchQuery.toLowerCase());
     return matchesType && matchesState && matchesSearch;
   });
 
   return (
-    <section 
-      id="explore" 
+    <section
+      id="explore"
       style={{
         padding: '3rem 4rem',
         background: '#e8e2d5'
@@ -44,7 +41,7 @@ export default function ImageGrid() {
         <p style={{ color: '#4a3f2f', marginBottom: '1.5rem', textAlign: 'center' }}>
           Browse by city, state, or year. Every image is freely available for personal use.
         </p>
-        
+
         <div style={{ display: 'flex', gap: '1rem', flexWrap: 'wrap', justifyContent: 'center' }}>
           {['all', 'cover', 'title'].map((type) => (
             <button
@@ -64,7 +61,7 @@ export default function ImageGrid() {
               {type === 'all' ? 'All' : type === 'cover' ? 'Cover Pages' : 'Title Pages'}
             </button>
           ))}
-          
+
           <select
             value={stateFilter}
             onChange={(e) => setStateFilter(e.target.value)}
@@ -83,7 +80,7 @@ export default function ImageGrid() {
               <option key={state} value={state}>{state}</option>
             ))}
           </select>
-          
+
           <input
             type="text"
             placeholder="Search cities..."
@@ -100,7 +97,7 @@ export default function ImageGrid() {
             }}
           />
         </div>
-        
+
         <p style={{ color: '#6b5d4a', fontSize: '0.875rem', marginTop: '1rem', textAlign: 'center' }}>
           Showing {filteredMaps.length} of {maps.length} maps
         </p>
@@ -114,20 +111,9 @@ export default function ImageGrid() {
         margin: '0 auto'
       }}>
         {filteredMaps.map((map) => (
-          <ImageCard
-            key={map.id}
-            map={map}
-            onClick={() => setSelectedMap(map)}
-          />
+          <ImageCard key={map.id} map={map} />
         ))}
       </div>
-
-      {selectedMap && (
-        <MapModal
-          map={selectedMap}
-          onClose={() => setSelectedMap(null)}
-        />
-      )}
     </section>
   );
 }

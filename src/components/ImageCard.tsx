@@ -1,20 +1,20 @@
-'use client';
-
 import Image from 'next/image';
+import Link from 'next/link';
 import { MapImage } from '@/lib/types';
 
 interface ImageCardProps {
   map: MapImage;
-  onClick: () => void;
 }
 
-export default function ImageCard({ map, onClick }: ImageCardProps) {
+export default function ImageCard({ map }: ImageCardProps) {
   return (
-    <div
-      onClick={onClick}
+    <Link
+      href={`/map/${map.id}`}
       style={{
+        display: 'block',
         cursor: 'pointer',
         transition: 'transform 0.3s ease',
+        textDecoration: 'none',
       }}
       onMouseEnter={(e) => e.currentTarget.style.transform = 'translateY(-8px)'}
       onMouseLeave={(e) => e.currentTarget.style.transform = 'translateY(0)'}
@@ -37,7 +37,7 @@ export default function ImageCard({ map, onClick }: ImageCardProps) {
             sizes="(max-width: 640px) 50vw, (max-width: 1024px) 33vw, 25vw"
           />
         </div>
-        
+
         <div style={{
           paddingTop: '0.75rem',
           paddingLeft: '0.5rem',
@@ -61,6 +61,6 @@ export default function ImageCard({ map, onClick }: ImageCardProps) {
           </p>
         </div>
       </div>
-    </div>
+    </Link>
   );
 }
