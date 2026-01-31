@@ -4,25 +4,14 @@ import { useState } from 'react';
 import ImageCard from './ImageCard';
 import { maps } from '@/data/maps';
 
-// States with missing images on R2 - exclude until uploaded
-const MISSING_STATES = [
-  'New Hampshire',
-  'North Dakota',
-  'South Dakota',
-  'West Virginia',
-];
-
-// Filter to only maps with working images
-const availableMaps = maps.filter(map => !MISSING_STATES.includes(map.state));
-
 export default function ImageGrid() {
   const [filter, setFilter] = useState('all');
   const [stateFilter, setStateFilter] = useState('all');
   const [searchQuery, setSearchQuery] = useState('');
 
-  const states = [...new Set(availableMaps.map(m => m.state))].sort();
+  const states = [...new Set(maps.map(m => m.state))].sort();
 
-  const filteredMaps = availableMaps.filter(map => {
+  const filteredMaps = maps.filter(map => {
     const matchesType = filter === 'all' || map.type === filter;
     const matchesState = stateFilter === 'all' || map.state === stateFilter;
     const matchesSearch = searchQuery === '' ||
@@ -110,7 +99,7 @@ export default function ImageGrid() {
         </div>
 
         <p style={{ color: '#6b5d4a', fontSize: '0.875rem', marginTop: '1rem', textAlign: 'center' }}>
-          Showing {filteredMaps.length} of {availableMaps.length} maps
+          Showing {filteredMaps.length} of {maps.length} maps
         </p>
       </div>
 
