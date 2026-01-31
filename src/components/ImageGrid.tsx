@@ -15,8 +15,7 @@ export default function ImageGrid() {
     const matchesType = filter === 'all' || map.type === filter;
     const matchesState = stateFilter === 'all' || map.state === stateFilter;
     const matchesSearch = searchQuery === '' ||
-      map.city.toLowerCase().includes(searchQuery.toLowerCase()) ||
-      map.state.toLowerCase().includes(searchQuery.toLowerCase());
+      map.city.toLowerCase().includes(searchQuery.toLowerCase());
     return matchesType && matchesState && matchesSearch;
   });
 
