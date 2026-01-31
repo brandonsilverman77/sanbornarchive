@@ -49180,4 +49180,18 @@ export const maps: MapImage[] = [
     height: 7650,
     aspectRatio: 0.843,
   },
+
+  export const printOptions = [
+  { id: 'small', label: 'Small (12")', description: '10.1" × 12" framed', basePrice: 89 },
+  { id: 'medium', label: 'Medium (18")', description: '15.2" × 18" framed', basePrice: 149 },
+  { id: 'large', label: 'Large (24")', description: '20.2" × 24" framed', basePrice: 199 },
+];
+
+  export const frameOptions = [
+  { id: 'none', label: 'No Frame', color: 'transparent', priceModifier: 0 },
+  { id: 'black', label: 'Black', color: '#1a1a1a', priceModifier: 0 },
+  { id: 'white', label: 'White', color: '#f5f5f5', priceModifier: 0 },
+  { id: 'walnut', label: 'Walnut', color: '#5c4033', priceModifier: 20 },
+];
+  
 ];
