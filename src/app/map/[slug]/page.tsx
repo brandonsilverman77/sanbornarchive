@@ -8,9 +8,9 @@ import { maps } from '@/data/maps';
 import { use } from 'react';
 
 const printSizes = [
-  { id: 'small', label: 'Small', description: '11×14"', price: 89 },
-  { id: 'medium', label: 'Medium', description: '18×24"', price: 149 },
-  { id: 'large', label: 'Large', description: '24×36"', price: 199 },
+  { id: 'small', description: '11×14"', price: 89 },
+  { id: 'medium', description: '18×24"', price: 149 },
+  { id: 'large', description: '24×36"', price: 199 },
 ];
 
 interface PageProps {
@@ -77,10 +77,9 @@ export default function MapPage({ params }: PageProps) {
               }}
             />
             <div className="zoom-hint">
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
                 <circle cx="11" cy="11" r="8" />
                 <path d="M21 21l-4.35-4.35" />
-                <path d="M11 8v6M8 11h6" />
               </svg>
               Hover to zoom
             </div>
@@ -88,54 +87,53 @@ export default function MapPage({ params }: PageProps) {
         </div>
 
         <div className="map-detail-info">
-          <div className="map-detail-header">
+          <header className="map-detail-header">
             <h1 className="map-detail-title">{map.city}</h1>
             <p className="map-detail-meta">
-              {map.state} · {map.year} · {map.type === 'cover' ? 'Cover Page' : 'Title Page'}
+              {map.state} · {map.year}
             </p>
+          </header>
+
+          <div className="map-detail-actions">
+            <a
+              href={map.full}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="download-link"
+            >
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4M7 10l5 5 5-5M12 15V3" />
+              </svg>
+              Download high-res image
+            </a>
+            <span className="download-meta">{map.width.toLocaleString()} × {map.height.toLocaleString()} pixels · Free for personal use</span>
           </div>
 
-          <a
-            href={map.full}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="download-btn-primary"
-          >
-            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-              <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4M7 10l5 5 5-5M12 15V3" />
-            </svg>
-            <span>
-              <strong>Download Free</strong>
-              <small>{map.width} × {map.height} px</small>
-            </span>
-          </a>
-
           <div className="print-section">
-            <p className="print-section-label">Want a print?</p>
-            <div className="print-options-row">
+            <h2 className="print-section-title">Order a print</h2>
+            <div className="print-options">
               {printSizes.map((size) => (
                 <button
                   key={size.id}
                   onClick={() => setSelectedSize(size.id)}
-                  className={`print-size-chip ${selectedSize === size.id ? 'selected' : ''}`}
+                  className={`print-option ${selectedSize === size.id ? 'selected' : ''}`}
                 >
-                  {size.description} · ${size.price}
+                  <span className="print-option-size">{size.description}</span>
+                  <span className="print-option-price">${size.price}</span>
                 </button>
               ))}
             </div>
-            <button className="order-print-btn-subtle">
-              Order Print — ${currentSize.price}
+            <button className="order-btn">
+              Add to Cart
             </button>
           </div>
 
-          <div className="map-detail-about">
-            <h3>About Sanborn Maps</h3>
+          <footer className="map-detail-footer">
             <p>
-              Sanborn fire insurance maps were created between 1867 and 1970 to assess fire insurance
-              liability in urbanized areas of the United States. These beautifully designed covers
-              represent some of the finest examples of American commercial cartography.
+              Sanborn maps were created between 1867–1970 to assess fire insurance liability.
+              These covers represent some of the finest examples of American commercial cartography.
             </p>
-          </div>
+          </footer>
         </div>
       </main>
     </div>
