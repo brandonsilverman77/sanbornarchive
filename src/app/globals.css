@@ -489,141 +489,119 @@ footer p {
 }
 
 .map-detail-header {
-  margin-bottom: 2rem;
+  margin-bottom: 2.5rem;
 }
 
 .map-detail-title {
   font-family: var(--font-display);
-  font-size: 2.5rem;
+  font-size: 2.75rem;
   font-weight: 500;
   color: var(--color-ink);
   margin-bottom: 0.25rem;
-  line-height: 1.1;
+  line-height: 1.05;
 }
 
 .map-detail-meta {
-  font-size: 1.05rem;
+  font-size: 1.1rem;
   color: var(--color-ink-faded);
+  letter-spacing: 0.01em;
 }
 
-/* Download section */
-.map-detail-actions {
-  margin-bottom: 2.5rem;
-}
-
-.download-link {
+/* Download button - primary action */
+.download-btn {
   display: inline-flex;
   align-items: center;
-  gap: 0.5rem;
+  justify-content: center;
+  gap: 0.6rem;
+  width: 100%;
+  padding: 1rem 1.5rem;
+  background: var(--color-ink);
+  color: var(--color-cream);
   font-family: var(--font-body);
-  font-size: 1rem;
-  color: var(--color-ink);
+  font-size: 0.95rem;
   text-decoration: none;
-  padding-bottom: 2px;
-  border-bottom: 1px solid var(--color-ink);
   transition: all 0.2s ease;
 }
 
-.download-link:hover {
-  color: var(--color-accent);
-  border-color: var(--color-accent);
+.download-btn:hover {
+  background: var(--color-accent);
 }
 
-.download-meta {
-  display: block;
-  margin-top: 0.5rem;
-  font-size: 0.85rem;
+.download-details {
+  margin-top: 0.6rem;
+  margin-bottom: 2.5rem;
+  font-size: 0.8rem;
   color: var(--color-ink-faded);
+  text-align: center;
 }
 
-/* Print section */
+/* Print section - secondary */
 .print-section {
   padding-top: 2rem;
   border-top: 1px solid var(--color-parchment);
 }
 
-.print-section-title {
-  font-family: var(--font-display);
-  font-size: 1rem;
-  font-weight: 500;
+.print-label {
+  font-size: 0.85rem;
   color: var(--color-ink-faded);
-  margin-bottom: 1rem;
+  margin-bottom: 0.75rem;
 }
 
-.print-options {
-  display: flex;
-  gap: 0.75rem;
-  margin-bottom: 1.25rem;
+.print-sizes {
+  display: inline-flex;
+  gap: 0.5rem;
+  margin-bottom: 0.75rem;
 }
 
-.print-option {
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 0.25rem;
-  padding: 0.875rem 0.5rem;
+.print-size {
+  padding: 0.35rem 0.75rem;
   background: transparent;
   border: 1px solid var(--color-parchment);
+  font-family: var(--font-body);
+  font-size: 0.8rem;
+  color: var(--color-ink-light);
   cursor: pointer;
-  transition: all 0.2s ease;
+  transition: all 0.15s ease;
 }
 
-.print-option:hover {
+.print-size:hover {
   border-color: var(--color-ink-light);
 }
 
-.print-option.selected {
-  border-color: var(--color-ink);
+.print-size.selected {
   background: var(--color-ink);
-}
-
-.print-option-size {
-  font-family: var(--font-body);
-  font-size: 0.9rem;
-  color: var(--color-ink);
-}
-
-.print-option.selected .print-option-size {
+  border-color: var(--color-ink);
   color: var(--color-cream);
-}
-
-.print-option-price {
-  font-family: var(--font-display);
-  font-size: 0.85rem;
-  color: var(--color-ink-faded);
-}
-
-.print-option.selected .print-option-price {
-  color: var(--color-parchment);
 }
 
 .order-btn {
-  padding: 0.75rem 1.5rem;
+  display: block;
+  padding: 0.6rem 1.25rem;
   background: transparent;
-  border: 1px solid var(--color-ink);
-  color: var(--color-ink);
+  border: 1px solid var(--color-ink-faded);
+  color: var(--color-ink-light);
   font-family: var(--font-body);
-  font-size: 0.9rem;
+  font-size: 0.8rem;
   cursor: pointer;
-  transition: all 0.2s ease;
+  transition: all 0.15s ease;
 }
 
 .order-btn:hover {
-  background: var(--color-ink);
-  color: var(--color-cream);
+  border-color: var(--color-ink);
+  color: var(--color-ink);
 }
 
 /* Footer */
 .map-detail-footer {
   margin-top: auto;
-  padding-top: 2rem;
+  padding-top: 2.5rem;
 }
 
 .map-detail-footer p {
-  font-size: 0.85rem;
+  font-size: 0.8rem;
   color: var(--color-ink-faded);
-  line-height: 1.6;
+  line-height: 1.55;
+  opacity: 0.8;
 }
 
 @media (max-width: 1024px) {

@@ -89,49 +89,46 @@ export default function MapPage({ params }: PageProps) {
         <div className="map-detail-info">
           <header className="map-detail-header">
             <h1 className="map-detail-title">{map.city}</h1>
-            <p className="map-detail-meta">
-              {map.state} · {map.year}
-            </p>
+            <p className="map-detail-meta">{map.state}, {map.year}</p>
           </header>
 
-          <div className="map-detail-actions">
-            <a
-              href={map.full}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="download-link"
-            >
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4M7 10l5 5 5-5M12 15V3" />
-              </svg>
-              Download high-res image
-            </a>
-            <span className="download-meta">{map.width.toLocaleString()} × {map.height.toLocaleString()} pixels · Free for personal use</span>
-          </div>
+          <a
+            href={map.full}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="download-btn"
+          >
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+              <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4M7 10l5 5 5-5M12 15V3" />
+            </svg>
+            Download High-Resolution Image
+          </a>
+          <p className="download-details">
+            {map.width.toLocaleString()} × {map.height.toLocaleString()} pixels · Free for personal use
+          </p>
 
           <div className="print-section">
-            <h2 className="print-section-title">Order a print</h2>
-            <div className="print-options">
+            <p className="print-label">Archival prints from ${printSizes[0].price}</p>
+            <div className="print-sizes">
               {printSizes.map((size) => (
                 <button
                   key={size.id}
                   onClick={() => setSelectedSize(size.id)}
-                  className={`print-option ${selectedSize === size.id ? 'selected' : ''}`}
+                  className={`print-size ${selectedSize === size.id ? 'selected' : ''}`}
                 >
-                  <span className="print-option-size">{size.description}</span>
-                  <span className="print-option-price">${size.price}</span>
+                  {size.description}
                 </button>
               ))}
             </div>
             <button className="order-btn">
-              Add to Cart
+              Order {currentSize.description} Print · ${currentSize.price}
             </button>
           </div>
 
           <footer className="map-detail-footer">
             <p>
-              Sanborn maps were created between 1867–1970 to assess fire insurance liability.
-              These covers represent some of the finest examples of American commercial cartography.
+              Sanborn fire insurance maps (1867–1970) are treasured for their intricate
+              covers showcasing American cities at the turn of the century.
             </p>
           </footer>
         </div>
