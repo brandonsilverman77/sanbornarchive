@@ -109,8 +109,8 @@ export default function ImageGrid() {
         maxWidth: '1400px',
         margin: '0 auto'
       }}>
-        {filteredMaps.map((map) => (
-          <ImageCard key={map.id} map={map} />
+        {filteredMaps.map((map, index) => (
+          <ImageCard key={`${map.id}-${index}`} map={map} />
         ))}
       </div>
     </section>
