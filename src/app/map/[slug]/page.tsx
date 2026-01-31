@@ -13,6 +13,21 @@ const printSizes = [
   { id: 'large', description: '24×36"', price: 199 },
 ];
 
+// States with missing images on R2 - exclude until uploaded
+const MISSING_STATES = [
+  'Arizona',
+  'Illinois',
+  'New Hampshire',
+  'New Mexico',
+  'New York',
+  'North Carolina',
+  'North Dakota',
+  'Pennsylvania',
+  'South Carolina',
+  'South Dakota',
+  'West Virginia',
+];
+
 interface PageProps {
   params: Promise<{ slug: string }>;
 }
@@ -25,7 +40,8 @@ export default function MapPage({ params }: PageProps) {
   const [isZooming, setIsZooming] = useState(false);
   const imageRef = useRef<HTMLDivElement>(null);
 
-  if (!map) {
+  // Show 404 if map not found or if state has missing images
+  if (!map || MISSING_STATES.includes(map.state)) {
     notFound();
   }
 
