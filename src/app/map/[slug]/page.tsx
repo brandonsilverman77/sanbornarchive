@@ -8,9 +8,9 @@ import { maps } from '@/data/maps';
 import { use } from 'react';
 
 const printSizes = [
-  { id: 'small', label: 'Small Print', description: '11×14"', price: 89 },
-  { id: 'medium', label: 'Medium Print', description: '18×24"', price: 149 },
-  { id: 'large', label: 'Large Print', description: '24×36"', price: 199 },
+  { id: 'small', label: 'Small', description: '11×14"', price: 89 },
+  { id: 'medium', label: 'Medium', description: '18×24"', price: 149 },
+  { id: 'large', label: 'Large', description: '24×36"', price: 199 },
 ];
 
 interface PageProps {
@@ -45,10 +45,10 @@ export default function MapPage({ params }: PageProps) {
             <Image
               src={map.medium}
               alt={`${map.city}, ${map.state} - ${map.year} Sanborn Map`}
-              width={800}
-              height={960}
+              width={1200}
+              height={1440}
               priority
-              style={{ width: '100%', height: 'auto', maxHeight: '80vh', objectFit: 'contain' }}
+              style={{ width: '100%', height: 'auto', maxHeight: '85vh', objectFit: 'contain' }}
             />
           </div>
         </div>
@@ -60,35 +60,6 @@ export default function MapPage({ params }: PageProps) {
               {map.state} · {map.year} · {map.type === 'cover' ? 'Cover Page' : 'Title Page'}
             </p>
           </div>
-
-          <div className="map-detail-section">
-            <h2 className="map-detail-section-title">Order a Museum-Quality Print</h2>
-            <p className="map-detail-section-desc">
-              Archival giclée prints on premium matte paper, shipped in protective packaging.
-            </p>
-
-            <div className="print-size-options">
-              {printSizes.map((size) => (
-                <button
-                  key={size.id}
-                  onClick={() => setSelectedSize(size.id)}
-                  className={`print-size-option ${selectedSize === size.id ? 'selected' : ''}`}
-                >
-                  <div className="print-size-info">
-                    <span className="print-size-label">{size.label}</span>
-                    <span className="print-size-dimensions">{size.description}</span>
-                  </div>
-                  <span className="print-size-price">${size.price}</span>
-                </button>
-              ))}
-            </div>
-
-            <button className="order-print-btn">
-              Order Print — ${currentSize.price}
-            </button>
-          </div>
-
-          <div className="map-detail-divider" />
 
           <div className="map-detail-section">
             <h2 className="map-detail-section-title">Free High-Resolution Download</h2>
@@ -106,6 +77,31 @@ export default function MapPage({ params }: PageProps) {
               </svg>
               Download High-Res Image
             </a>
+          </div>
+
+          <div className="map-detail-divider" />
+
+          <div className="map-detail-section print-section">
+            <h2 className="map-detail-section-title subtle">Order a Print</h2>
+            <p className="map-detail-section-desc subtle">
+              Museum-quality archival prints on premium matte paper.
+            </p>
+
+            <div className="print-size-options-compact">
+              {printSizes.map((size) => (
+                <button
+                  key={size.id}
+                  onClick={() => setSelectedSize(size.id)}
+                  className={`print-size-chip ${selectedSize === size.id ? 'selected' : ''}`}
+                >
+                  {size.description} — ${size.price}
+                </button>
+              ))}
+            </div>
+
+            <button className="order-print-btn-subtle">
+              Order Print — ${currentSize.price}
+            </button>
           </div>
 
           <div className="map-detail-about">
