@@ -8,6 +8,7 @@ export default function ImageGrid() {
   const [filter, setFilter] = useState('all');
   const [stateFilter, setStateFilter] = useState('all');
   const [searchQuery, setSearchQuery] = useState('');
+  const [showFavoritesOnly, setShowFavoritesOnly] = useState(false);
 
   const states = [...new Set(maps.map(m => m.state))].sort();
 
@@ -18,7 +19,8 @@ export default function ImageGrid() {
     const matchesSearch = searchQuery === '' ||
       map.city.toLowerCase().includes(query) ||
       map.state.toLowerCase().includes(query);
-    return matchesType && matchesState && matchesSearch;
+    const matchesFavorites = !showFavoritesOnly || map.favorite === true;
+    return matchesType && matchesState && matchesSearch && matchesFavorites;
   });
 
   return (
@@ -44,6 +46,25 @@ export default function ImageGrid() {
         </p>
 
         <div style={{ display: 'flex', gap: '1rem', flexWrap: 'wrap', justifyContent: 'center' }}>
+          <button
+            onClick={() => setShowFavoritesOnly(!showFavoritesOnly)}
+            style={{
+              padding: '0.5rem 1rem',
+              background: showFavoritesOnly ? '#8b4513' : 'transparent',
+              border: '1px solid #d4cbb8',
+              borderColor: showFavoritesOnly ? '#8b4513' : '#d4cbb8',
+              fontFamily: 'Source Serif 4, Georgia, serif',
+              fontSize: '0.875rem',
+              color: showFavoritesOnly ? '#f5f1e8' : '#4a3f2f',
+              cursor: 'pointer',
+              display: 'flex',
+              alignItems: 'center',
+              gap: '0.25rem'
+            }}
+          >
+            <span style={{ fontSize: '1rem' }}>★</span> Favorites
+          </button>
+
           {['all', 'cover', 'title'].map((type) => (
             <button
               key={type}

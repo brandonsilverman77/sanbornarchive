@@ -10,6 +10,7 @@ export interface MapImage {
   width: number;
   height: number;
   aspectRatio: number;
+  favorite?: boolean;
 }
 
 export interface PrintOption {
@@ -32,4 +33,5 @@ export type FilterState = {
   search: string;
   sortBy: 'city' | 'year' | 'state';
   sortOrder: 'asc' | 'desc';
+  favoritesOnly: boolean;
 };
