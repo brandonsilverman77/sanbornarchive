@@ -3538,7 +3538,6 @@ export const maps: MapImage[] = [
     width: 6450,
     height: 7650,
     aspectRatio: 0.843,
-    favorite: true,
   },
   {
     id: 'derby-connecticut-1896',
