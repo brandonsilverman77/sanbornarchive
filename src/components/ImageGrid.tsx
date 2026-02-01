@@ -5,7 +5,6 @@ import ImageCard from './ImageCard';
 import { maps } from '@/data/maps';
 
 export default function ImageGrid() {
-  const [filter, setFilter] = useState('all');
   const [stateFilter, setStateFilter] = useState('all');
   const [searchQuery, setSearchQuery] = useState('');
   const [showFavoritesOnly, setShowFavoritesOnly] = useState(false);
@@ -13,14 +12,13 @@ export default function ImageGrid() {
   const states = [...new Set(maps.map(m => m.state))].sort();
 
   const filteredMaps = maps.filter(map => {
-    const matchesType = filter === 'all' || map.type === filter;
     const matchesState = stateFilter === 'all' || map.state === stateFilter;
     const query = searchQuery.toLowerCase();
     const matchesSearch = searchQuery === '' ||
       map.city.toLowerCase().includes(query) ||
       map.state.toLowerCase().includes(query);
     const matchesFavorites = !showFavoritesOnly || map.favorite === true;
-    return matchesType && matchesState && matchesSearch && matchesFavorites;
+    return matchesState && matchesSearch && matchesFavorites;
   });
 
   return (
@@ -64,25 +62,6 @@ export default function ImageGrid() {
           >
             <span style={{ fontSize: '1rem' }}>★</span> Favorites
           </button>
-
-          {['all', 'cover', 'title'].map((type) => (
-            <button
-              key={type}
-              onClick={() => setFilter(type)}
-              style={{
-                padding: '0.5rem 1rem',
-                background: filter === type ? '#2c2416' : 'transparent',
-                border: '1px solid #d4cbb8',
-                borderColor: filter === type ? '#2c2416' : '#d4cbb8',
-                fontFamily: 'Source Serif 4, Georgia, serif',
-                fontSize: '0.875rem',
-                color: filter === type ? '#f5f1e8' : '#4a3f2f',
-                cursor: 'pointer'
-              }}
-            >
-              {type === 'all' ? 'All' : type === 'cover' ? 'Cover Pages' : 'Title Pages'}
-            </button>
-          ))}
 
           <select
             value={stateFilter}
