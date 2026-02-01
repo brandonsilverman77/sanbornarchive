@@ -1,3 +1,6 @@
+'use client';
+
+import { useState } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 import { MapImage } from '@/lib/types';
@@ -7,6 +10,16 @@ interface ImageCardProps {
 }
 
 export default function ImageCard({ map }: ImageCardProps) {
+  const [copied, setCopied] = useState(false);
+
+  const copyId = (e: React.MouseEvent) => {
+    e.preventDefault();
+    e.stopPropagation();
+    navigator.clipboard.writeText(map.id);
+    setCopied(true);
+    setTimeout(() => setCopied(false), 1500);
+  };
+
   return (
     <Link
       href={`/map/${map.id}`}
@@ -36,6 +49,41 @@ export default function ImageCard({ map }: ImageCardProps) {
             style={{ objectFit: 'cover' }}
             sizes="(max-width: 640px) 50vw, (max-width: 1024px) 33vw, 25vw"
           />
+          {map.favorite && (
+            <div style={{
+              position: 'absolute',
+              top: '0.5rem',
+              left: '0.5rem',
+              background: '#8b4513',
+              color: 'white',
+              width: '1.5rem',
+              height: '1.5rem',
+              borderRadius: '50%',
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'center',
+              fontSize: '0.75rem',
+            }}>
+              ★
+            </div>
+          )}
+          <button
+            onClick={copyId}
+            style={{
+              position: 'absolute',
+              bottom: '0.5rem',
+              right: '0.5rem',
+              background: copied ? '#4a7c59' : 'rgba(44,36,22,0.8)',
+              color: 'white',
+              border: 'none',
+              padding: '0.25rem 0.5rem',
+              fontSize: '0.625rem',
+              cursor: 'pointer',
+              fontFamily: 'monospace',
+            }}
+          >
+            {copied ? 'Copied!' : 'Copy ID'}
+          </button>
         </div>
 
         <div style={{
