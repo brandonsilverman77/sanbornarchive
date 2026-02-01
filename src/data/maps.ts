@@ -19559,6 +19559,7 @@ export const maps: MapImage[] = [
     width: 6450,
     height: 7650,
     aspectRatio: 0.843,
+    favorite: true,
   },
   {
     id: 'stillwater-minnesota-1884',
@@ -21457,6 +21458,7 @@ export const maps: MapImage[] = [
     width: 6450,
     height: 7650,
     aspectRatio: 0.843,
+    favorite: true,
   },
   {
     id: 'butte-montana-1916',
@@ -21626,6 +21628,7 @@ export const maps: MapImage[] = [
     width: 6450,
     height: 7650,
     aspectRatio: 0.843,
+    favorite: true,
   },
   {
     id: 'alliance-nebraska-1920',
@@ -22198,6 +22201,7 @@ export const maps: MapImage[] = [
     width: 6450,
     height: 7650,
     aspectRatio: 0.843,
+    favorite: true,
   },
   {
     id: 'omaha-nebraska-1905',
@@ -27817,6 +27821,7 @@ export const maps: MapImage[] = [
     width: 6450,
     height: 7650,
     aspectRatio: 0.843,
+    favorite: true,
   },
   {
     id: 'reidsville-north-carolina-1922',
@@ -28103,6 +28108,7 @@ export const maps: MapImage[] = [
     width: 6450,
     height: 7650,
     aspectRatio: 0.843,
+    favorite: true,
   },
   {
     id: 'wilson-north-carolina-1922',
@@ -39752,6 +39758,7 @@ export const maps: MapImage[] = [
     width: 6450,
     height: 7650,
     aspectRatio: 0.843,
+    favorite: true,
   },
   {
     id: 'chester-south-carolina-1917',
@@ -41236,6 +41243,7 @@ export const maps: MapImage[] = [
     width: 6450,
     height: 7650,
     aspectRatio: 0.843,
+    favorite: true,
   },
   {
     id: 'amarillo-texas-1913',
@@ -45282,6 +45290,7 @@ export const maps: MapImage[] = [
     width: 6450,
     height: 7650,
     aspectRatio: 0.843,
+    favorite: true,
   },
   {
     id: 'petersburg-virginia-1885',
@@ -45568,6 +45577,7 @@ export const maps: MapImage[] = [
     width: 6450,
     height: 7650,
     aspectRatio: 0.843,
+    favorite: true,
   },
   {
     id: 'roanoke-virginia-1919',
