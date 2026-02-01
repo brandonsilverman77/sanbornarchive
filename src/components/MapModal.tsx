@@ -17,7 +17,7 @@ export default function MapModal({ map, onClose }: MapModalProps) {
   // Calculate price
   const sizeOption = printOptions.find((o) => o.id === selectedSize)!;
   const frameOption = frameOptions.find((o) => o.id === selectedFrame)!;
-  const totalPrice = sizeOption.basePrice + frameOption.priceModifier;
+  const totalPrice = sizeOption.basePrice + (frameOption.priceModifier ?? 0);
 
   // Close on escape
   useEffect(() => {
@@ -116,7 +116,7 @@ export default function MapModal({ map, onClose }: MapModalProps) {
                   }}
                 />
                 <span className="text-xs md:text-sm">{option.label}</span>
-                {option.priceModifier > 0 && (
+                {(option.priceModifier ?? 0) > 0 && (
                   <span className={`block text-xs ${selectedFrame === option.id ? 'opacity-70' : 'text-[var(--color-ink-faded)]'}`}>
                     +${option.priceModifier}
                   </span>
