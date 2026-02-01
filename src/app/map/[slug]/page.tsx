@@ -7,13 +7,21 @@ import { notFound } from 'next/navigation';
 import { maps } from '@/data/maps';
 import { use } from 'react';
 
-// TODO: Re-enable when Shopify integration is ready
-// const printSizes = [
-//   { id: 'small', description: '10⅛ × 12"', price: 139 },
-//   { id: 'medium', description: '15³⁄₁₆ × 18"', price: 299 },
-//   { id: 'large', description: '20⅜ × 24"', price: 465 },
-// ];
-// const SHOPIFY_STORE_URL = 'https://sanborn-fire-maps.myshopify.com/products';
+const printSizes = [
+  { id: 'small', description: '10⅛ × 12"', price: 139 },
+  { id: 'medium', description: '15³⁄₁₆ × 18"', price: 299 },
+  { id: 'large', description: '20⅜ × 24"', price: 465 },
+];
+
+const SHOPIFY_STORE_URL = 'https://sanborn-fire-maps.myshopify.com/products';
+
+// Maps that have Shopify products set up
+const PRINT_ENABLED_MAPS = [
+  'san-francisco-california-1886',
+  'atlanta-georgia-1886',
+  'seattle-washington-1893',
+  'new-orleans-louisiana-1885',
+];
 
 interface PageProps {
   params: Promise<{ slug: string }>;
@@ -22,6 +30,7 @@ interface PageProps {
 export default function MapPage({ params }: PageProps) {
   const { slug } = use(params);
   const map = maps.find((m) => m.id === slug);
+  const [selectedSize, setSelectedSize] = useState('medium');
   const [zoomPosition, setZoomPosition] = useState({ x: 50, y: 50 });
   const [isZooming, setIsZooming] = useState(false);
   const imageRef = useRef<HTMLDivElement>(null);
@@ -29,6 +38,9 @@ export default function MapPage({ params }: PageProps) {
   if (!map) {
     notFound();
   }
+
+  const isPrintEnabled = PRINT_ENABLED_MAPS.includes(map.id);
+  const currentSize = printSizes.find((s) => s.id === selectedSize)!;
 
   const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
     if (!imageRef.current) return;
@@ -106,30 +118,30 @@ export default function MapPage({ params }: PageProps) {
             {map.width.toLocaleString()} × {map.height.toLocaleString()} pixels · Free for personal use
           </p>
 
-          {/* TODO: Re-enable when Shopify integration is ready
-          <div className="print-section">
-            <p className="print-label">Archival prints from $139</p>
-            <div className="print-sizes">
-              {printSizes.map((size) => (
-                <button
-                  key={size.id}
-                  onClick={() => setSelectedSize(size.id)}
-                  className={`print-size ${selectedSize === size.id ? 'selected' : ''}`}
-                >
-                  {size.description}
-                </button>
-              ))}
+          {isPrintEnabled && (
+            <div className="print-section">
+              <p className="print-label">Archival prints from ${printSizes[0].price}</p>
+              <div className="print-sizes">
+                {printSizes.map((size) => (
+                  <button
+                    key={size.id}
+                    onClick={() => setSelectedSize(size.id)}
+                    className={`print-size ${selectedSize === size.id ? 'selected' : ''}`}
+                  >
+                    {size.description}
+                  </button>
+                ))}
+              </div>
+              <a
+                href={`${SHOPIFY_STORE_URL}/${map.id}`}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="order-btn"
+              >
+                Order {currentSize.description} Print · ${currentSize.price}
+              </a>
             </div>
-            <a
-              href={`${SHOPIFY_STORE_URL}/${map.id}?variant=${currentSize.id}`}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="order-btn"
-            >
-              Order {currentSize.description} Print · ${currentSize.price}
-            </a>
-          </div>
-          */}
+          )}
 
           <footer className="map-detail-footer">
             <p>
