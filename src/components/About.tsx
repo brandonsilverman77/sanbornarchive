@@ -2,7 +2,7 @@ import Link from 'next/link';
 
 export default function About() {
   return (
-    <section style={{
+    <section id="about" style={{
       padding: '2rem 4rem',
       maxWidth: '900px',
       margin: '0 auto',
