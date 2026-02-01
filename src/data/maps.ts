@@ -6796,7 +6796,6 @@ export const maps: MapImage[] = [
     width: 6450,
     height: 7650,
     aspectRatio: 0.843,
-    favorite: true,
   },
   {
     id: 'savannah-georgia-1898',
@@ -6810,7 +6809,6 @@ export const maps: MapImage[] = [
     width: 6450,
     height: 7650,
     aspectRatio: 0.843,
-    favorite: true,
   },
   {
     id: 'savannah-georgia-1916',
@@ -7934,7 +7932,6 @@ export const maps: MapImage[] = [
     width: 6450,
     height: 7650,
     aspectRatio: 0.843,
-    favorite: true,
   },
   {
     id: 'fort-wayne-indiana-1890',
@@ -25516,7 +25513,6 @@ export const maps: MapImage[] = [
     width: 6450,
     height: 7650,
     aspectRatio: 0.843,
-    favorite: true,
   },
   {
     id: 'newark-new-york-1890',
@@ -29096,7 +29092,6 @@ export const maps: MapImage[] = [
     width: 6450,
     height: 7650,
     aspectRatio: 0.843,
-    favorite: true,
   },
   {
     id: 'circleville-ohio-1884',
@@ -49219,7 +49214,6 @@ export const maps: MapImage[] = [
     width: 2531,
     height: 3000,
     aspectRatio: 0.844,
-    favorite: true,
   },
   {
     id: 'brooklyn-new-york-1908',
