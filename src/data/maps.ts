@@ -3335,6 +3335,7 @@ export const maps: MapImage[] = [
     width: 6450,
     height: 7650,
     aspectRatio: 0.843,
+    favorite: true,
   },
   {
     id: 'bristol-connecticut-1884',
@@ -3543,6 +3544,7 @@ export const maps: MapImage[] = [
     width: 6450,
     height: 7650,
     aspectRatio: 0.843,
+    favorite: true,
   },
   {
     id: 'derby-connecticut-1896',
@@ -3738,6 +3740,7 @@ export const maps: MapImage[] = [
     width: 6450,
     height: 7650,
     aspectRatio: 0.843,
+    favorite: true,
   },
   {
     id: 'hartford-connecticut-1923',
@@ -4089,6 +4092,7 @@ export const maps: MapImage[] = [
     width: 6450,
     height: 7650,
     aspectRatio: 0.843,
+    favorite: true,
   },
   {
     id: 'new-london-connecticut-1884',
@@ -4258,6 +4262,7 @@ export const maps: MapImage[] = [
     width: 6450,
     height: 7650,
     aspectRatio: 0.843,
+    favorite: true,
   },
   {
     id: 'norwich-connecticut-1892',
@@ -5116,6 +5121,7 @@ export const maps: MapImage[] = [
     width: 6450,
     height: 7650,
     aspectRatio: 0.843,
+    favorite: true,
   },
   {
     id: 'key-west-florida-1889',
@@ -5311,6 +5317,7 @@ export const maps: MapImage[] = [
     width: 6450,
     height: 7650,
     aspectRatio: 0.843,
+    favorite: true,
   },
   {
     id: 'miami-florida-1924',
@@ -5792,6 +5799,7 @@ export const maps: MapImage[] = [
     width: 6450,
     height: 7650,
     aspectRatio: 0.843,
+    favorite: true,
   },
   {
     id: 'tampa-florida-1922',
@@ -6809,6 +6817,7 @@ export const maps: MapImage[] = [
     width: 6450,
     height: 7650,
     aspectRatio: 0.843,
+    favorite: true,
   },
   {
     id: 'savannah-georgia-1916',
@@ -7017,6 +7026,7 @@ export const maps: MapImage[] = [
     width: 6450,
     height: 7650,
     aspectRatio: 0.843,
+    favorite: true,
   },
   {
     id: 'idaho-falls-idaho-1905',
@@ -7095,6 +7105,7 @@ export const maps: MapImage[] = [
     width: 6450,
     height: 7650,
     aspectRatio: 0.843,
+    favorite: true,
   },
   {
     id: 'east-saint-louis-illinois-1905',
@@ -7826,6 +7837,7 @@ export const maps: MapImage[] = [
     width: 6450,
     height: 7650,
     aspectRatio: 0.843,
+    favorite: true,
   },
   {
     id: 'elwood-indiana-1895',
@@ -7959,6 +7971,7 @@ export const maps: MapImage[] = [
     width: 6450,
     height: 7650,
     aspectRatio: 0.843,
+    favorite: true,
   },
   {
     id: 'fort-wayne-indiana-1918',
@@ -8312,6 +8325,7 @@ export const maps: MapImage[] = [
     width: 6450,
     height: 7650,
     aspectRatio: 0.843,
+    favorite: true,
   },
   {
     id: 'jeffersonville-indiana-1886',
@@ -8650,6 +8664,7 @@ export const maps: MapImage[] = [
     width: 6450,
     height: 7650,
     aspectRatio: 0.843,
+    favorite: true,
   },
   {
     id: 'lawrenceburg-indiana-1885',
@@ -9209,6 +9224,7 @@ export const maps: MapImage[] = [
     width: 6450,
     height: 7650,
     aspectRatio: 0.843,
+    favorite: true,
   },
   {
     id: 'new-albany-indiana-1886',
@@ -9261,6 +9277,7 @@ export const maps: MapImage[] = [
     width: 6450,
     height: 7650,
     aspectRatio: 0.843,
+    favorite: true,
   },
   {
     id: 'new-castle-indiana-1914',
@@ -9770,6 +9787,7 @@ export const maps: MapImage[] = [
     width: 6450,
     height: 7650,
     aspectRatio: 0.843,
+    favorite: true,
   },
   {
     id: 'south-bend-indiana-1917',
@@ -9825,6 +9843,7 @@ export const maps: MapImage[] = [
     width: 6450,
     height: 7650,
     aspectRatio: 0.843,
+    favorite: true,
   },
   {
     id: 'terre-haute-indiana-1911',
@@ -9838,6 +9857,7 @@ export const maps: MapImage[] = [
     width: 6450,
     height: 7650,
     aspectRatio: 0.843,
+    favorite: true,
   },
   {
     id: 'tipton-indiana-1896',
@@ -10410,6 +10430,7 @@ export const maps: MapImage[] = [
     width: 6450,
     height: 7650,
     aspectRatio: 0.843,
+    favorite: true,
   },
   {
     id: 'centerville-iowa-1907',
@@ -11583,6 +11604,7 @@ export const maps: MapImage[] = [
     width: 6450,
     height: 7650,
     aspectRatio: 0.843,
+    favorite: true,
   },
   {
     id: 'washington-iowa-1917',
@@ -12571,6 +12593,7 @@ export const maps: MapImage[] = [
     width: 6450,
     height: 7650,
     aspectRatio: 0.843,
+    favorite: true,
   },
   {
     id: 'kansas-city-kansas-1908',
@@ -13312,6 +13335,7 @@ export const maps: MapImage[] = [
     width: 6450,
     height: 7650,
     aspectRatio: 0.843,
+    favorite: true,
   },
   {
     id: 'wichita-kansas-1935',
@@ -14146,6 +14170,7 @@ export const maps: MapImage[] = [
     width: 6450,
     height: 7650,
     aspectRatio: 0.843,
+    favorite: true,
   },
   {
     id: 'owensboro-kentucky-1885',
@@ -14211,6 +14236,7 @@ export const maps: MapImage[] = [
     width: 6450,
     height: 7650,
     aspectRatio: 0.843,
+    favorite: true,
   },
   {
     id: 'paducah-kentucky-1885',
@@ -14926,6 +14952,7 @@ export const maps: MapImage[] = [
     width: 6450,
     height: 7650,
     aspectRatio: 0.843,
+    favorite: true,
   },
   {
     id: 'new-orleans-louisiana-1908',
