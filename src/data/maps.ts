@@ -34918,7 +34918,6 @@ export const maps: MapImage[] = [
     width: 6450,
     height: 7650,
     aspectRatio: 0.843,
-    favorite: true,
   },
   {
     id: 'easton-pennsylvania-1892',
@@ -35062,7 +35061,6 @@ export const maps: MapImage[] = [
     width: 6450,
     height: 7650,
     aspectRatio: 0.843,
-    favorite: true,
   },
   {
     id: 'emporium-pennsylvania-1892',
@@ -35128,7 +35126,6 @@ export const maps: MapImage[] = [
     width: 6450,
     height: 7650,
     aspectRatio: 0.843,
-    favorite: true,
   },
   {
     id: 'erie-pennsylvania-1891',
@@ -36195,7 +36192,6 @@ export const maps: MapImage[] = [
     width: 6450,
     height: 7650,
     aspectRatio: 0.843,
-    favorite: true,
   },
   {
     id: 'lebanon-pennsylvania-1895',
