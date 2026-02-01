@@ -1,17 +1,19 @@
 'use client';
 
-import { useState, useRef } from 'react';
+import { useRef, useState } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
 import { maps } from '@/data/maps';
 import { use } from 'react';
 
-const printSizes = [
-  { id: 'small', description: '11×14"', price: 89 },
-  { id: 'medium', description: '18×24"', price: 149 },
-  { id: 'large', description: '24×36"', price: 199 },
-];
+// TODO: Re-enable when Shopify integration is ready
+// const printSizes = [
+//   { id: 'small', description: '10⅛ × 12"', price: 139 },
+//   { id: 'medium', description: '15³⁄₁₆ × 18"', price: 299 },
+//   { id: 'large', description: '20⅜ × 24"', price: 465 },
+// ];
+// const SHOPIFY_STORE_URL = 'https://sanborn-fire-maps.myshopify.com/products';
 
 interface PageProps {
   params: Promise<{ slug: string }>;
@@ -20,7 +22,6 @@ interface PageProps {
 export default function MapPage({ params }: PageProps) {
   const { slug } = use(params);
   const map = maps.find((m) => m.id === slug);
-  const [selectedSize, setSelectedSize] = useState('medium');
   const [zoomPosition, setZoomPosition] = useState({ x: 50, y: 50 });
   const [isZooming, setIsZooming] = useState(false);
   const imageRef = useRef<HTMLDivElement>(null);
@@ -28,8 +29,6 @@ export default function MapPage({ params }: PageProps) {
   if (!map) {
     notFound();
   }
-
-  const currentSize = printSizes.find((s) => s.id === selectedSize)!;
 
   const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
     if (!imageRef.current) return;
@@ -107,8 +106,9 @@ export default function MapPage({ params }: PageProps) {
             {map.width.toLocaleString()} × {map.height.toLocaleString()} pixels · Free for personal use
           </p>
 
+          {/* TODO: Re-enable when Shopify integration is ready
           <div className="print-section">
-            <p className="print-label">Archival prints from ${printSizes[0].price}</p>
+            <p className="print-label">Archival prints from $139</p>
             <div className="print-sizes">
               {printSizes.map((size) => (
                 <button
@@ -120,10 +120,16 @@ export default function MapPage({ params }: PageProps) {
                 </button>
               ))}
             </div>
-            <button className="order-btn">
+            <a
+              href={`${SHOPIFY_STORE_URL}/${map.id}?variant=${currentSize.id}`}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="order-btn"
+            >
               Order {currentSize.description} Print · ${currentSize.price}
-            </button>
+            </a>
           </div>
+          */}
 
           <footer className="map-detail-footer">
             <p>
