@@ -1404,7 +1404,6 @@ export const maps: MapImage[] = [
     width: 6450,
     height: 7650,
     aspectRatio: 0.843,
-    favorite: true,
   },
   {
     id: 'hanford-california-1898',
@@ -6080,7 +6079,6 @@ export const maps: MapImage[] = [
     width: 6450,
     height: 7650,
     aspectRatio: 0.843,
-    favorite: true,
   },
   {
     id: 'atlanta-georgia-1895',
@@ -7127,7 +7125,6 @@ export const maps: MapImage[] = [
     width: 6450,
     height: 7650,
     aspectRatio: 0.843,
-    favorite: true,
   },
   {
     id: 'joliet-illinois-1891',
@@ -8159,7 +8156,6 @@ export const maps: MapImage[] = [
     width: 6450,
     height: 7650,
     aspectRatio: 0.843,
-    favorite: true,
   },
   {
     id: 'hammond-indiana-1915',
@@ -9805,7 +9801,6 @@ export const maps: MapImage[] = [
     width: 6450,
     height: 7650,
     aspectRatio: 0.843,
-    favorite: true,
   },
   {
     id: 'terre-haute-indiana-1892',
@@ -28538,7 +28533,6 @@ export const maps: MapImage[] = [
     width: 6450,
     height: 7650,
     aspectRatio: 0.843,
-    favorite: true,
   },
   {
     id: 'akron-ohio-1892',
@@ -36733,7 +36727,6 @@ export const maps: MapImage[] = [
     width: 6450,
     height: 7650,
     aspectRatio: 0.843,
-    favorite: true,
   },
   {
     id: 'mechanicsburg-pennsylvania-1896',
@@ -36864,7 +36857,6 @@ export const maps: MapImage[] = [
     width: 6450,
     height: 7650,
     aspectRatio: 0.843,
-    favorite: true,
   },
   {
     id: 'milton-pennsylvania-1896',
@@ -37268,7 +37260,6 @@ export const maps: MapImage[] = [
     width: 6450,
     height: 7650,
     aspectRatio: 0.843,
-    favorite: true,
   },
   {
     id: 'new-castle-pennsylvania-1894',
@@ -37516,7 +37507,6 @@ export const maps: MapImage[] = [
     width: 6450,
     height: 7650,
     aspectRatio: 0.843,
-    favorite: true,
   },
   {
     id: 'oil-city-pennsylvania-1891',
@@ -37530,7 +37520,6 @@ export const maps: MapImage[] = [
     width: 6450,
     height: 7650,
     aspectRatio: 0.843,
-    favorite: true,
   },
   {
     id: 'oil-city-pennsylvania-1895',
@@ -38000,7 +37989,6 @@ export const maps: MapImage[] = [
     width: 6450,
     height: 7650,
     aspectRatio: 0.843,
-    favorite: true,
   },
   {
     id: 'punxsutawney-pennsylvania-1924',
@@ -39275,7 +39263,6 @@ export const maps: MapImage[] = [
     width: 6450,
     height: 7650,
     aspectRatio: 0.843,
-    favorite: true,
   },
   {
     id: 'uniontown-pennsylvania-1914',
@@ -39562,7 +39549,6 @@ export const maps: MapImage[] = [
     width: 6450,
     height: 7650,
     aspectRatio: 0.843,
-    favorite: true,
   },
   {
     id: 'west-chester-pennsylvania-1891',
@@ -39798,7 +39784,6 @@ export const maps: MapImage[] = [
     width: 6450,
     height: 7650,
     aspectRatio: 0.843,
-    favorite: true,
   },
   {
     id: 'columbia-south-carolina-1888',
@@ -40722,7 +40707,6 @@ export const maps: MapImage[] = [
     width: 6450,
     height: 7650,
     aspectRatio: 0.843,
-    favorite: true,
   },
   {
     id: 'columbia-tennessee-1895',
@@ -42922,7 +42906,6 @@ export const maps: MapImage[] = [
     width: 6450,
     height: 7650,
     aspectRatio: 0.843,
-    favorite: true,
   },
   {
     id: 'quanah-texas-1921',
