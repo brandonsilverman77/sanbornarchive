@@ -1,25 +1,40 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useMemo } from 'react';
 import ImageCard from './ImageCard';
 import { maps } from '@/data/maps';
+
+type SortOption = 'a-z' | 'z-a' | 'oldest';
 
 export default function ImageGrid() {
   const [stateFilter, setStateFilter] = useState('all');
   const [searchQuery, setSearchQuery] = useState('');
   const [showFavoritesOnly, setShowFavoritesOnly] = useState(false);
+  const [sortBy, setSortBy] = useState<SortOption>('a-z');
 
   const states = [...new Set(maps.map(m => m.state))].sort();
 
-  const filteredMaps = maps.filter(map => {
-    const matchesState = stateFilter === 'all' || map.state === stateFilter;
-    const query = searchQuery.toLowerCase();
-    const matchesSearch = searchQuery === '' ||
-      map.city.toLowerCase().includes(query) ||
-      map.state.toLowerCase().includes(query);
-    const matchesFavorites = !showFavoritesOnly || map.favorite === true;
-    return matchesState && matchesSearch && matchesFavorites;
-  });
+  const filteredAndSortedMaps = useMemo(() => {
+    const filtered = maps.filter(map => {
+      const matchesState = stateFilter === 'all' || map.state === stateFilter;
+      const query = searchQuery.toLowerCase();
+      const matchesSearch = searchQuery === '' ||
+        map.city.toLowerCase().includes(query) ||
+        map.state.toLowerCase().includes(query);
+      const matchesFavorites = !showFavoritesOnly || map.favorite === true;
+      return matchesState && matchesSearch && matchesFavorites;
+    });
+
+    return [...filtered].sort((a, b) => {
+      if (sortBy === 'a-z') {
+        return a.city.localeCompare(b.city);
+      } else if (sortBy === 'z-a') {
+        return b.city.localeCompare(a.city);
+      } else {
+        return a.year - b.year;
+      }
+    });
+  }, [stateFilter, searchQuery, showFavoritesOnly, sortBy]);
 
   return (
     <section
@@ -97,10 +112,28 @@ export default function ImageGrid() {
               minWidth: '200px'
             }}
           />
+
+          <select
+            value={sortBy}
+            onChange={(e) => setSortBy(e.target.value as SortOption)}
+            style={{
+              padding: '0.5rem 1rem',
+              background: 'transparent',
+              border: '1px solid #d4cbb8',
+              fontFamily: 'Source Serif 4, Georgia, serif',
+              fontSize: '0.875rem',
+              color: '#4a3f2f',
+              minWidth: '120px'
+            }}
+          >
+            <option value="a-z">A → Z</option>
+            <option value="z-a">Z → A</option>
+            <option value="oldest">Oldest First</option>
+          </select>
         </div>
 
         <p style={{ color: '#6b5d4a', fontSize: '0.875rem', marginTop: '1rem', textAlign: 'center' }}>
-          Showing {filteredMaps.length} of {maps.length} maps
+          Showing {filteredAndSortedMaps.length} of {maps.length} maps
         </p>
       </div>
 
@@ -111,7 +144,7 @@ export default function ImageGrid() {
         maxWidth: '1400px',
         margin: '0 auto'
       }}>
-        {filteredMaps.map((map, index) => (
+        {filteredAndSortedMaps.map((map, index) => (
           <ImageCard key={`${map.id}-${index}`} map={map} />
         ))}
       </div>
