@@ -821,7 +821,6 @@ export const maps: MapImage[] = [
     width: 6450,
     height: 7650,
     aspectRatio: 0.843,
-    favorite: true,
   },
   {
     id: 'camden-arkansas-1924',
@@ -1150,7 +1149,6 @@ export const maps: MapImage[] = [
     width: 6450,
     height: 7650,
     aspectRatio: 0.843,
-    favorite: true,
   },
   {
     id: 'pine-bluff-arkansas-1889',
