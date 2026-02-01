@@ -14,8 +14,10 @@ export default function ImageGrid() {
   const filteredMaps = maps.filter(map => {
     const matchesType = filter === 'all' || map.type === filter;
     const matchesState = stateFilter === 'all' || map.state === stateFilter;
+    const query = searchQuery.toLowerCase();
     const matchesSearch = searchQuery === '' ||
-      map.city.toLowerCase().includes(searchQuery.toLowerCase());
+      map.city.toLowerCase().includes(query) ||
+      map.state.toLowerCase().includes(query);
     return matchesType && matchesState && matchesSearch;
   });
 
@@ -82,7 +84,7 @@ export default function ImageGrid() {
 
           <input
             type="text"
-            placeholder="Search cities..."
+            placeholder="Search cities or states..."
             value={searchQuery}
             onChange={(e) => setSearchQuery(e.target.value)}
             style={{
