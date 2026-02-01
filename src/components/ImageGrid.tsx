@@ -4,13 +4,13 @@ import { useState, useMemo } from 'react';
 import ImageCard from './ImageCard';
 import { maps } from '@/data/maps';
 
-type SortOption = 'a-z' | 'z-a' | 'oldest';
+type SortOption = 'default' | 'a-z' | 'z-a' | 'oldest';
 
 export default function ImageGrid() {
   const [stateFilter, setStateFilter] = useState('all');
   const [searchQuery, setSearchQuery] = useState('');
   const [showFavoritesOnly, setShowFavoritesOnly] = useState(false);
-  const [sortBy, setSortBy] = useState<SortOption>('a-z');
+  const [sortBy, setSortBy] = useState<SortOption>('default');
 
   const states = [...new Set(maps.map(m => m.state))].sort();
 
@@ -26,7 +26,13 @@ export default function ImageGrid() {
     });
 
     return [...filtered].sort((a, b) => {
-      if (sortBy === 'a-z') {
+      // For default sort, favorites come first, then sort alphabetically within each group
+      if (sortBy === 'default') {
+        const aFav = a.favorite === true ? 0 : 1;
+        const bFav = b.favorite === true ? 0 : 1;
+        if (aFav !== bFav) return aFav - bFav;
+        return a.city.localeCompare(b.city);
+      } else if (sortBy === 'a-z') {
         return a.city.localeCompare(b.city);
       } else if (sortBy === 'z-a') {
         return b.city.localeCompare(a.city);
@@ -126,6 +132,7 @@ export default function ImageGrid() {
               minWidth: '120px'
             }}
           >
+            <option value="default">★ Favorites First</option>
             <option value="a-z">A → Z</option>
             <option value="z-a">Z → A</option>
             <option value="oldest">Oldest First</option>
