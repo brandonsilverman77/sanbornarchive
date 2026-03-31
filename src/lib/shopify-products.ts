@@ -824,6 +824,296 @@ export const SHOPIFY_PRODUCT_MAP: Record<
       large: 'gid://shopify/ProductVariant/52522256204065',
     },
   },
+  // --- Batch 3 (PA re-imports) ---
+  'allentown-pennsylvania-1885': {
+    productId: 'gid://shopify/Product/10303522373921',
+    variants: {
+      small: 'gid://shopify/ProductVariant/52522256335137',
+      medium: 'gid://shopify/ProductVariant/52522256367905',
+      large: 'gid://shopify/ProductVariant/52522256400673',
+    },
+  },
+  'erie-pennsylvania-1888': {
+    productId: 'gid://shopify/Product/10303522406689',
+    variants: {
+      small: 'gid://shopify/ProductVariant/52522256433441',
+      medium: 'gid://shopify/ProductVariant/52522256466209',
+      large: 'gid://shopify/ProductVariant/52522256498977',
+    },
+  },
+  'harrisburg-pennsylvania-1884': {
+    productId: 'gid://shopify/Product/10303522439457',
+    variants: {
+      small: 'gid://shopify/ProductVariant/52522256531745',
+      medium: 'gid://shopify/ProductVariant/52522256564513',
+      large: 'gid://shopify/ProductVariant/52522256597281',
+    },
+  },
+  'pittsburgh-pennsylvania-1884': {
+    productId: 'gid://shopify/Product/10303522472225',
+    variants: {
+      small: 'gid://shopify/ProductVariant/52522256630049',
+      medium: 'gid://shopify/ProductVariant/52522256662817',
+      large: 'gid://shopify/ProductVariant/52522256695585',
+    },
+  },
+  'reading-pennsylvania-1887': {
+    productId: 'gid://shopify/Product/10303522504993',
+    variants: {
+      small: 'gid://shopify/ProductVariant/52522256728353',
+      medium: 'gid://shopify/ProductVariant/52522256761121',
+      large: 'gid://shopify/ProductVariant/52522256793889',
+    },
+  },
+  'scranton-pennsylvania-1884': {
+    productId: 'gid://shopify/Product/10303522537761',
+    variants: {
+      small: 'gid://shopify/ProductVariant/52522256826657',
+      medium: 'gid://shopify/ProductVariant/52522256859425',
+      large: 'gid://shopify/ProductVariant/52522256892193',
+    },
+  },
+  // --- Batch 4 (favorites gap-fill) ---
+  'abilene-texas-1929': {
+    productId: 'gid://shopify/Product/10304334561569',
+    variants: {
+      small: 'gid://shopify/ProductVariant/52524703777057',
+      medium: 'gid://shopify/ProductVariant/52524703809825',
+      large: 'gid://shopify/ProductVariant/52524703842593',
+    },
+  },
+  'akron-ohio-1892': {
+    productId: 'gid://shopify/Product/10304334496033',
+    variants: {
+      small: 'gid://shopify/ProductVariant/52524703580449',
+      medium: 'gid://shopify/ProductVariant/52524703613217',
+      large: 'gid://shopify/ProductVariant/52524703645985',
+    },
+  },
+  'baltimore-maryland-1914': {
+    productId: 'gid://shopify/Product/10304334332193',
+    variants: {
+      small: 'gid://shopify/ProductVariant/52524703121697',
+      medium: 'gid://shopify/ProductVariant/52524703154465',
+      large: 'gid://shopify/ProductVariant/52524703187233',
+    },
+  },
+  'bridgeport-connecticut-1913': {
+    productId: 'gid://shopify/Product/10304333414689',
+    variants: {
+      small: 'gid://shopify/ProductVariant/52524699746593',
+      medium: 'gid://shopify/ProductVariant/52524699779361',
+      large: 'gid://shopify/ProductVariant/52524699812129',
+    },
+  },
+  'cedar-rapids-iowa-1913': {
+    productId: 'gid://shopify/Product/10304334004513',
+    variants: {
+      small: 'gid://shopify/ProductVariant/52524701942049',
+      medium: 'gid://shopify/ProductVariant/52524701974817',
+      large: 'gid://shopify/ProductVariant/52524702007585',
+    },
+  },
+  'des-moines-iowa-1891': {
+    productId: 'gid://shopify/Product/10304334037281',
+    variants: {
+      small: 'gid://shopify/ProductVariant/52524702040353',
+      medium: 'gid://shopify/ProductVariant/52524702073121',
+      large: 'gid://shopify/ProductVariant/52524702105889',
+    },
+  },
+  'dubuque-iowa-1891': {
+    productId: 'gid://shopify/Product/10304334070049',
+    variants: {
+      small: 'gid://shopify/ProductVariant/52524702138657',
+      medium: 'gid://shopify/ProductVariant/52524702171425',
+      large: 'gid://shopify/ProductVariant/52524702204193',
+    },
+  },
+  'east-saint-louis-illinois-1905': {
+    productId: 'gid://shopify/Product/10304333545761',
+    variants: {
+      small: 'gid://shopify/ProductVariant/52524700074273',
+      medium: 'gid://shopify/ProductVariant/52524700107041',
+      large: 'gid://shopify/ProductVariant/52524700139809',
+    },
+  },
+  'elkhart-indiana-1927': {
+    productId: 'gid://shopify/Product/10304333611297',
+    variants: {
+      small: 'gid://shopify/ProductVariant/52524700205345',
+      medium: 'gid://shopify/ProductVariant/52524700238113',
+      large: 'gid://shopify/ProductVariant/52524700270881',
+    },
+  },
+  'evansville-indiana-1910': {
+    productId: 'gid://shopify/Product/10304333644065',
+    variants: {
+      small: 'gid://shopify/ProductVariant/52524700303649',
+      medium: 'gid://shopify/ProductVariant/52524700336417',
+      large: 'gid://shopify/ProductVariant/52524700369185',
+    },
+  },
+  'indianapolis-indiana-1915': {
+    productId: 'gid://shopify/Product/10304333676833',
+    variants: {
+      small: 'gid://shopify/ProductVariant/52524700401953',
+      medium: 'gid://shopify/ProductVariant/52524700434721',
+      large: 'gid://shopify/ProductVariant/52524700467489',
+    },
+  },
+  'kansas-city-kansas-1907': {
+    productId: 'gid://shopify/Product/10304334201121',
+    variants: {
+      small: 'gid://shopify/ProductVariant/52524702466337',
+      medium: 'gid://shopify/ProductVariant/52524702499105',
+      large: 'gid://shopify/ProductVariant/52524702531873',
+    },
+  },
+  'lafayette-indiana-1915': {
+    productId: 'gid://shopify/Product/10304333709601',
+    variants: {
+      small: 'gid://shopify/ProductVariant/52524700500257',
+      medium: 'gid://shopify/ProductVariant/52524700533025',
+      large: 'gid://shopify/ProductVariant/52524700565793',
+    },
+  },
+  'louisville-kentucky-1905': {
+    productId: 'gid://shopify/Product/10304334233889',
+    variants: {
+      small: 'gid://shopify/ProductVariant/52524702564641',
+      medium: 'gid://shopify/ProductVariant/52524702597409',
+      large: 'gid://shopify/ProductVariant/52524702630177',
+    },
+  },
+  'muncie-indiana-1911': {
+    productId: 'gid://shopify/Product/10304333742369',
+    variants: {
+      small: 'gid://shopify/ProductVariant/52524700598561',
+      medium: 'gid://shopify/ProductVariant/52524700631329',
+      large: 'gid://shopify/ProductVariant/52524700664097',
+    },
+  },
+  'new-albany-indiana-1905': {
+    productId: 'gid://shopify/Product/10304333807905',
+    variants: {
+      small: 'gid://shopify/ProductVariant/52524701417761',
+      medium: 'gid://shopify/ProductVariant/52524701450529',
+      large: 'gid://shopify/ProductVariant/52524701483297',
+    },
+  },
+  'new-haven-connecticut-1901': {
+    productId: 'gid://shopify/Product/10304333480225',
+    variants: {
+      small: 'gid://shopify/ProductVariant/52524699877665',
+      medium: 'gid://shopify/ProductVariant/52524699910433',
+      large: 'gid://shopify/ProductVariant/52524699943201',
+    },
+  },
+  'newport-kentucky-1910': {
+    productId: 'gid://shopify/Product/10304334266657',
+    variants: {
+      small: 'gid://shopify/ProductVariant/52524702662945',
+      medium: 'gid://shopify/ProductVariant/52524702695713',
+      large: 'gid://shopify/ProductVariant/52524702728481',
+    },
+  },
+  'norwalk-connecticut-1922': {
+    productId: 'gid://shopify/Product/10304333512993',
+    variants: {
+      small: 'gid://shopify/ProductVariant/52524699975969',
+      medium: 'gid://shopify/ProductVariant/52524700008737',
+      large: 'gid://shopify/ProductVariant/52524700041505',
+    },
+  },
+  'owego-new-york-1888': {
+    productId: 'gid://shopify/Product/10304334430497',
+    variants: {
+      small: 'gid://shopify/ProductVariant/52524703383841',
+      medium: 'gid://shopify/ProductVariant/52524703416609',
+      large: 'gid://shopify/ProductVariant/52524703449377',
+    },
+  },
+  'owensboro-kentucky-1910': {
+    productId: 'gid://shopify/Product/10304334299425',
+    variants: {
+      small: 'gid://shopify/ProductVariant/52524702761249',
+      medium: 'gid://shopify/ProductVariant/52524702794017',
+      large: 'gid://shopify/ProductVariant/52524702826785',
+    },
+  },
+  'sioux-city-iowa-1902': {
+    productId: 'gid://shopify/Product/10304334168353',
+    variants: {
+      small: 'gid://shopify/ProductVariant/52524702302497',
+      medium: 'gid://shopify/ProductVariant/52524702335265',
+      large: 'gid://shopify/ProductVariant/52524702368033',
+    },
+  },
+  'south-bend-indiana-1899': {
+    productId: 'gid://shopify/Product/10304333840673',
+    variants: {
+      small: 'gid://shopify/ProductVariant/52524701516065',
+      medium: 'gid://shopify/ProductVariant/52524701548833',
+      large: 'gid://shopify/ProductVariant/52524701581601',
+    },
+  },
+  'terre-haute-indiana-1892': {
+    productId: 'gid://shopify/Product/10304333873441',
+    variants: {
+      small: 'gid://shopify/ProductVariant/52524701614369',
+      medium: 'gid://shopify/ProductVariant/52524701647137',
+      large: 'gid://shopify/ProductVariant/52524701679905',
+    },
+  },
+  'terre-haute-indiana-1896': {
+    productId: 'gid://shopify/Product/10304333906209',
+    variants: {
+      small: 'gid://shopify/ProductVariant/52524701712673',
+      medium: 'gid://shopify/ProductVariant/52524701745441',
+      large: 'gid://shopify/ProductVariant/52524701778209',
+    },
+  },
+  'terre-haute-indiana-1911': {
+    productId: 'gid://shopify/Product/10304333971745',
+    variants: {
+      small: 'gid://shopify/ProductVariant/52524701843745',
+      medium: 'gid://shopify/ProductVariant/52524701876513',
+      large: 'gid://shopify/ProductVariant/52524701909281',
+    },
+  },
+  'texarkana-texas-1915': {
+    productId: 'gid://shopify/Product/10304334594337',
+    variants: {
+      small: 'gid://shopify/ProductVariant/52524703875361',
+      medium: 'gid://shopify/ProductVariant/52524703908129',
+      large: 'gid://shopify/ProductVariant/52524703940897',
+    },
+  },
+  'the-oranges-new-jersey-1895': {
+    productId: 'gid://shopify/Product/10304334364961',
+    variants: {
+      small: 'gid://shopify/ProductVariant/52524703220001',
+      medium: 'gid://shopify/ProductVariant/52524703252769',
+      large: 'gid://shopify/ProductVariant/52524703285537',
+    },
+  },
+  'wilmington-north-carolina-1915': {
+    productId: 'gid://shopify/Product/10304334463265',
+    variants: {
+      small: 'gid://shopify/ProductVariant/52524703482145',
+      medium: 'gid://shopify/ProductVariant/52524703514913',
+      large: 'gid://shopify/ProductVariant/52524703547681',
+    },
+  },
+  'youngstown-ohio-1896': {
+    productId: 'gid://shopify/Product/10304334528801',
+    variants: {
+      small: 'gid://shopify/ProductVariant/52524703678753',
+      medium: 'gid://shopify/ProductVariant/52524703711521',
+      large: 'gid://shopify/ProductVariant/52524703744289',
+    },
+  },
 };
 
 // Maps fully connected in Simply Framed (print file + Favorite linked for all variants)
@@ -909,6 +1199,37 @@ const FULFILLMENT_READY = new Set([
   'topeka-kansas-1883',
   'wilmington-north-carolina-1884',
   'youngstown-ohio-1884',
+  // --- Batch 4 (favorites gap-fill) ---
+  'abilene-texas-1929',
+  'akron-ohio-1892',
+  'baltimore-maryland-1914',
+  'bridgeport-connecticut-1913',
+  'cedar-rapids-iowa-1913',
+  'des-moines-iowa-1891',
+  'dubuque-iowa-1891',
+  'east-saint-louis-illinois-1905',
+  'elkhart-indiana-1927',
+  'evansville-indiana-1910',
+  'indianapolis-indiana-1915',
+  'kansas-city-kansas-1907',
+  'lafayette-indiana-1915',
+  'louisville-kentucky-1905',
+  'muncie-indiana-1911',
+  'new-albany-indiana-1905',
+  'new-haven-connecticut-1901',
+  'newport-kentucky-1910',
+  'norwalk-connecticut-1922',
+  'owego-new-york-1888',
+  'owensboro-kentucky-1910',
+  'sioux-city-iowa-1902',
+  'south-bend-indiana-1899',
+  'terre-haute-indiana-1892',
+  'terre-haute-indiana-1896',
+  'terre-haute-indiana-1911',
+  'texarkana-texas-1915',
+  'the-oranges-new-jersey-1895',
+  'wilmington-north-carolina-1915',
+  'youngstown-ohio-1896',
 ]);
 
 export function isPrintEnabled(mapId: string): boolean {
