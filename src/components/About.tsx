@@ -55,17 +55,19 @@ export default function About() {
         custom-sized reproductions.
       </p>
       
-      <Link 
-        href="/about" 
-        style={{ 
-          color: '#8b4513', 
+      <a
+        href="https://kottke.org/24/12/the-arresting-typography-of-the-sanborn-fire-insurance-maps"
+        target="_blank"
+        rel="noopener noreferrer"
+        style={{
+          color: '#8b4513',
           textDecoration: 'none',
           display: 'inline-block',
           marginTop: '1rem'
         }}
       >
         Read the full story →
-      </Link>
+      </a>
     </section>
   );
 }
