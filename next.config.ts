@@ -12,6 +12,11 @@ const nextConfig: NextConfig = {
         hostname: 'pub-23faac8a63b74289910a34142d5d1899.r2.dev',
         pathname: '/**',
       },
+      {
+        protocol: 'https',
+        hostname: 'cdn.shopify.com',
+        pathname: '/**',
+      },
     ],
   },
 };

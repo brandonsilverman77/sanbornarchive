@@ -4,34 +4,30 @@ import { useRef, useState } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 import { MapImage } from '@/lib/types';
-
-const printSizes = [
-  { id: 'small', description: '10⅛ × 12"', price: 139 },
-  { id: 'medium', description: '15³⁄₁₆ × 18"', price: 299 },
-  { id: 'large', description: '20⅜ × 24"', price: 465 },
-];
-
-const SHOPIFY_STORE_URL = 'https://sanborn-fire-maps.myshopify.com/products';
-
-const PRINT_ENABLED_MAPS = [
-  'san-francisco-california-1886',
-  'atlanta-georgia-1886',
-  'seattle-washington-1893',
-  'new-orleans-louisiana-1885',
-];
+import { isPrintEnabled, getPrintSizes, getVariantId, type PrintSizeId } from '@/lib/shopify-products';
+import { useCart } from '@/context/CartContext';
 
 interface MapDetailClientProps {
   map: MapImage;
 }
 
 export default function MapDetailClient({ map }: MapDetailClientProps) {
-  const [selectedSize, setSelectedSize] = useState('medium');
   const [zoomPosition, setZoomPosition] = useState({ x: 50, y: 50 });
   const [isZooming, setIsZooming] = useState(false);
+  const [selectedSize, setSelectedSize] = useState<PrintSizeId>('medium');
   const imageRef = useRef<HTMLDivElement>(null);
+  const { addToCart, openCart, isLoading } = useCart();
 
-  const isPrintEnabled = PRINT_ENABLED_MAPS.includes(map.id);
-  const currentSize = printSizes.find((s) => s.id === selectedSize)!;
+  const printEnabled = isPrintEnabled(map.id);
+  const printSizes = printEnabled ? getPrintSizes(map.aspectRatio) : [];
+  const currentSize = printSizes.find((s) => s.id === selectedSize);
+
+  const handleAddToCart = async () => {
+    const variantId = getVariantId(map.id, selectedSize);
+    if (!variantId) return;
+    await addToCart(variantId);
+    openCart();
+  };
 
   const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
     if (!imageRef.current) return;
@@ -41,6 +37,173 @@ export default function MapDetailClient({ map }: MapDetailClientProps) {
     setZoomPosition({ x, y });
   };
 
+  // Print-enabled maps use the print page layout with download button added
+  if (printEnabled && currentSize) {
+    return (
+      <main className="print-page">
+        <nav className="print-page-nav">
+          <Link href="/#explore" className="back-link">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+              <path d="M19 12H5M12 19l-7-7 7-7" />
+            </svg>
+            Back to Collection
+          </Link>
+        </nav>
+
+        <div className="print-page-content">
+          {/* Left: Framed mockup */}
+          <div className="print-page-image">
+            <div className="print-mockup">
+              <div className="print-mockup-frame">
+                <div className="print-mockup-mat">
+                  <Image
+                    src={map.medium}
+                    alt={`Framed print of ${map.city}, ${map.state} (${map.year})`}
+                    width={800}
+                    height={960}
+                    priority
+                    style={{ width: '100%', height: 'auto', display: 'block' }}
+                  />
+                </div>
+              </div>
+            </div>
+            <p className="print-mockup-note">
+              Shown in Gallery Natural frame with single white mat
+            </p>
+          </div>
+
+          {/* Right: Product details */}
+          <div className="print-page-details">
+            <header className="print-page-header">
+              <h1 className="print-page-title">{map.city}, {map.state}</h1>
+              <p className="print-page-year">Sanborn Fire Insurance Map, {map.year}</p>
+            </header>
+
+            {/* Download button */}
+            <a
+              href={map.full}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="download-btn download-btn-secondary"
+            >
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4M7 10l5 5 5-5M12 15V3" />
+              </svg>
+              Download Free High-Res Image
+            </a>
+            <p className="download-details">
+              {map.width.toLocaleString()} × {map.height.toLocaleString()} pixels · Free for personal use
+            </p>
+
+            {/* Print ordering section */}
+            <div className="print-page-divider">
+              <h2 className="print-page-order-title">Order a Museum-Quality Print</h2>
+            </div>
+
+            {/* What's included */}
+            <div className="print-page-includes">
+              <h2 className="print-page-section-label">What&apos;s included</h2>
+              <ul className="print-includes-list">
+                <li>
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                    <path d="M20 6L9 17l-5-5" />
+                  </svg>
+                  <div>
+                    <strong>Giclée print</strong>
+                    <span>100% cotton, acid-free archival paper with fade-resistant inks</span>
+                  </div>
+                </li>
+                <li>
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                    <path d="M20 6L9 17l-5-5" />
+                  </svg>
+                  <div>
+                    <strong>Hardwood frame</strong>
+                    <span>Gallery Natural finish, sustainably sourced</span>
+                  </div>
+                </li>
+                <li>
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                    <path d="M20 6L9 17l-5-5" />
+                  </svg>
+                  <div>
+                    <strong>Conservation mat</strong>
+                    <span>Acid-free, single white mat</span>
+                  </div>
+                </li>
+                <li>
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                    <path d="M20 6L9 17l-5-5" />
+                  </svg>
+                  <div>
+                    <strong>UV-protective glazing</strong>
+                    <span>Crystal-clear acrylic, blocks 99% of UV rays</span>
+                  </div>
+                </li>
+                <li>
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                    <path d="M20 6L9 17l-5-5" />
+                  </svg>
+                  <div>
+                    <strong>Ready to hang</strong>
+                    <span>Includes mounting hardware and dust cover</span>
+                  </div>
+                </li>
+              </ul>
+            </div>
+
+            {/* Size selector */}
+            <div className="print-page-sizes">
+              <h2 className="print-page-section-label">Select size</h2>
+              <div className="print-size-cards">
+                {printSizes.map((size) => (
+                  <button
+                    key={size.id}
+                    onClick={() => setSelectedSize(size.id)}
+                    className={`print-size-card ${selectedSize === size.id ? 'selected' : ''}`}
+                  >
+                    <span className="print-size-name">{size.name}</span>
+                    <span className="print-size-dimensions">{size.description}</span>
+                    <span className="print-size-price">${size.price}</span>
+                  </button>
+                ))}
+              </div>
+            </div>
+
+            <button
+              onClick={handleAddToCart}
+              disabled={isLoading}
+              className="print-page-cart-btn"
+            >
+              {isLoading ? 'Adding...' : `Add to Cart · $${currentSize.price}`}
+            </button>
+
+            {/* Partner info */}
+            <div className="print-page-partner">
+              <p>
+                Each print is custom framed to order by{' '}
+                <a href="https://www.simplyframed.com" target="_blank" rel="noopener noreferrer">
+                  Simply Framed
+                </a>
+                , a premium framing studio trusted by museums and galleries nationwide.
+              </p>
+              <p className="print-page-shipping">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                  <rect x="1" y="3" width="15" height="13" />
+                  <polygon points="16 8 20 8 23 11 23 16 16 16 16 8" />
+                  <circle cx="5.5" cy="18.5" r="2.5" />
+                  <circle cx="18.5" cy="18.5" r="2.5" />
+                </svg>
+                Ships in 7–10 business days. Free shipping on orders over $200.
+              </p>
+            </div>
+          </div>
+        </div>
+      </main>
+    );
+  }
+
+  // Non-print maps use the original zoom layout
   return (
     <div className="map-detail-page">
       <nav className="map-detail-nav">
@@ -108,31 +271,6 @@ export default function MapDetailClient({ map }: MapDetailClientProps) {
           <p className="download-details">
             {map.width.toLocaleString()} × {map.height.toLocaleString()} pixels · Free for personal use
           </p>
-
-          {isPrintEnabled && (
-            <div className="print-section">
-              <p className="print-label">Archival prints from ${printSizes[0].price}</p>
-              <div className="print-sizes">
-                {printSizes.map((size) => (
-                  <button
-                    key={size.id}
-                    onClick={() => setSelectedSize(size.id)}
-                    className={`print-size ${selectedSize === size.id ? 'selected' : ''}`}
-                  >
-                    {size.description}
-                  </button>
-                ))}
-              </div>
-              <a
-                href={`${SHOPIFY_STORE_URL}/${map.id}`}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="order-btn"
-              >
-                Order {currentSize.description} Print · ${currentSize.price}
-              </a>
-            </div>
-          )}
 
           <footer className="map-detail-footer">
             <p>

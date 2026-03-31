@@ -4,6 +4,7 @@ import { SITE_URL, SITE_NAME } from '@/lib/constants';
 import { getOrganizationJsonLd } from '@/lib/jsonld';
 import JsonLd from '@/components/JsonLd';
 import GoogleAnalytics from '@/components/GoogleAnalytics';
+import Providers from '@/components/Providers';
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
@@ -61,7 +62,7 @@ export default function RootLayout({
       <body style={{ fontFamily: "'EB Garamond', Georgia, serif" }}>
         <GoogleAnalytics />
         <JsonLd data={getOrganizationJsonLd()} />
-        {children}
+        <Providers>{children}</Providers>
       </body>
     </html>
   );

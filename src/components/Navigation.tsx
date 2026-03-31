@@ -2,6 +2,7 @@
 
 import Link from 'next/link';
 import { useState, useEffect } from 'react';
+import CartButton from '@/components/CartButton';
 
 export default function Navigation() {
   const [scrolled, setScrolled] = useState(false);
@@ -30,32 +31,35 @@ export default function Navigation() {
         <span className="text-[var(--color-ink-faded)] font-normal">Archive</span>
       </Link>
 
-      <ul className="flex gap-6 md:gap-10 list-none">
-        <li>
-          <Link
-            href="#explore"
-            className="font-body text-sm md:text-[0.95rem] text-[var(--color-ink-light)] tracking-wide hover:text-[var(--color-accent)] transition-colors"
-          >
-            Explore
-          </Link>
-        </li>
-        <li>
-          <Link
-            href="#about"
-            className="font-body text-sm md:text-[0.95rem] text-[var(--color-ink-light)] tracking-wide hover:text-[var(--color-accent)] transition-colors"
-          >
-            About
-          </Link>
-        </li>
-        <li>
-          <Link
-            href="/prints"
-            className="font-body text-sm md:text-[0.95rem] text-[var(--color-ink-light)] tracking-wide hover:text-[var(--color-accent)] transition-colors"
-          >
-            Prints
-          </Link>
-        </li>
-      </ul>
+      <div className="flex items-center gap-6 md:gap-10">
+        <ul className="flex gap-6 md:gap-10 list-none">
+          <li>
+            <Link
+              href="#explore"
+              className="font-body text-sm md:text-[0.95rem] text-[var(--color-ink-light)] tracking-wide hover:text-[var(--color-accent)] transition-colors"
+            >
+              Explore
+            </Link>
+          </li>
+          <li>
+            <Link
+              href="#about"
+              className="font-body text-sm md:text-[0.95rem] text-[var(--color-ink-light)] tracking-wide hover:text-[var(--color-accent)] transition-colors"
+            >
+              About
+            </Link>
+          </li>
+          <li>
+            <Link
+              href="/prints"
+              className="font-body text-sm md:text-[0.95rem] text-[var(--color-ink-light)] tracking-wide hover:text-[var(--color-accent)] transition-colors"
+            >
+              Prints
+            </Link>
+          </li>
+        </ul>
+        <CartButton />
+      </div>
     </nav>
   );
 }

@@ -13,20 +13,6 @@ export interface MapImage {
   favorite?: boolean;
 }
 
-export interface PrintOption {
-  id: string;
-  label: string;
-  description: string;
-  basePrice: number;
-}
-
-export interface FrameOption {
-  id: string;
-  label: string;
-  color: string;
-  priceModifier: number;
-}
-
 export type FilterState = {
   type: 'all' | 'cover' | 'title';
   state: string | null;
