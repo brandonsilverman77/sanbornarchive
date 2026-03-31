@@ -1,10 +1,22 @@
-import { createStorefrontApiClient } from '@shopify/storefront-api-client';
+import { createStorefrontApiClient, type StorefrontApiClient } from '@shopify/storefront-api-client';
 
-const client = createStorefrontApiClient({
-  storeDomain: process.env.NEXT_PUBLIC_SHOPIFY_DOMAIN!,
-  publicAccessToken: process.env.NEXT_PUBLIC_SHOPIFY_STOREFRONT_TOKEN!,
-  apiVersion: '2025-04',
-});
+let _client: StorefrontApiClient | null = null;
+
+function getClient(): StorefrontApiClient {
+  if (!_client) {
+    const domain = process.env.NEXT_PUBLIC_SHOPIFY_DOMAIN;
+    const token = process.env.NEXT_PUBLIC_SHOPIFY_STOREFRONT_TOKEN;
+    if (!domain || !token) {
+      throw new Error('Shopify environment variables not configured');
+    }
+    _client = createStorefrontApiClient({
+      storeDomain: domain,
+      publicAccessToken: token,
+      apiVersion: '2025-04',
+    });
+  }
+  return _client;
+}
 
 // --- Types ---
 
@@ -92,7 +104,7 @@ export async function createCart(
   variantId: string,
   quantity: number = 1
 ): Promise<Cart> {
-  const { data, errors } = await client.request(
+  const { data, errors } = await getClient().request(
     `mutation cartCreate($input: CartInput!) {
       cartCreate(input: $input) {
         cart {
@@ -122,7 +134,7 @@ export async function createCart(
 }
 
 export async function getCart(cartId: string): Promise<Cart | null> {
-  const { data, errors } = await client.request(
+  const { data, errors } = await getClient().request(
     `query getCart($cartId: ID!) {
       cart(id: $cartId) {
         ...CartFields
@@ -146,7 +158,7 @@ export async function addToCart(
   variantId: string,
   quantity: number = 1
 ): Promise<Cart> {
-  const { data, errors } = await client.request(
+  const { data, errors } = await getClient().request(
     `mutation cartLinesAdd($cartId: ID!, $lines: [CartLineInput!]!) {
       cartLinesAdd(cartId: $cartId, lines: $lines) {
         cart {
@@ -178,7 +190,7 @@ export async function removeFromCart(
   cartId: string,
   lineItemId: string
 ): Promise<Cart> {
-  const { data, errors } = await client.request(
+  const { data, errors } = await getClient().request(
     `mutation cartLinesRemove($cartId: ID!, $lineIds: [ID!]!) {
       cartLinesRemove(cartId: $cartId, lineIds: $lineIds) {
         cart {
