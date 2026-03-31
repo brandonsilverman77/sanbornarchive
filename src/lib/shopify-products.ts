@@ -463,12 +463,374 @@ export const SHOPIFY_PRODUCT_MAP: Record<
       large: 'gid://shopify/ProductVariant/52521950708001',
     },
   },
+  // --- Batch 3 ---
+  'akron-ohio-1888': {
+    productId: 'gid://shopify/Product/10303522210081',
+    variants: {
+      small: 'gid://shopify/ProductVariant/52522255843617',
+      medium: 'gid://shopify/ProductVariant/52522255876385',
+      large: 'gid://shopify/ProductVariant/52522255909153',
+    },
+  },
+  'augusta-georgia-1884': {
+    productId: 'gid://shopify/Product/10303521259809',
+    variants: {
+      small: 'gid://shopify/ProductVariant/52522252796193',
+      medium: 'gid://shopify/ProductVariant/52522252828961',
+      large: 'gid://shopify/ProductVariant/52522252861729',
+    },
+  },
+  'baton-rouge-louisiana-1885': {
+    productId: 'gid://shopify/Product/10303521784097',
+    variants: {
+      small: 'gid://shopify/ProductVariant/52522254237985',
+      medium: 'gid://shopify/ProductVariant/52522254270753',
+      large: 'gid://shopify/ProductVariant/52522254303521',
+    },
+  },
+  'birmingham-alabama-1885': {
+    productId: 'gid://shopify/Product/10303520997665',
+    variants: {
+      small: 'gid://shopify/ProductVariant/52522252140833',
+      medium: 'gid://shopify/ProductVariant/52522252173601',
+      large: 'gid://shopify/ProductVariant/52522252206369',
+    },
+  },
+  'boston-massachusetts-1867': {
+    productId: 'gid://shopify/Product/10303521882401',
+    variants: {
+      small: 'gid://shopify/ProductVariant/52522254729505',
+      medium: 'gid://shopify/ProductVariant/52522254762273',
+      large: 'gid://shopify/ProductVariant/52522254795041',
+    },
+  },
+  'canton-ohio-1887': {
+    productId: 'gid://shopify/Product/10303522242849',
+    variants: {
+      small: 'gid://shopify/ProductVariant/52522255941921',
+      medium: 'gid://shopify/ProductVariant/52522255974689',
+      large: 'gid://shopify/ProductVariant/52522256007457',
+    },
+  },
+  'cedar-rapids-iowa-1884': {
+    productId: 'gid://shopify/Product/10303521489185',
+    variants: {
+      small: 'gid://shopify/ProductVariant/52522253418785',
+      medium: 'gid://shopify/ProductVariant/52522253451553',
+      large: 'gid://shopify/ProductVariant/52522253484321',
+    },
+  },
+  'charleston-south-carolina-1884': {
+    productId: 'gid://shopify/Product/10303522570529',
+    variants: {
+      small: 'gid://shopify/ProductVariant/52522256924961',
+      medium: 'gid://shopify/ProductVariant/52522256957729',
+      large: 'gid://shopify/ProductVariant/52522256990497',
+    },
+  },
+  'colorado-springs-colorado-1890': {
+    productId: 'gid://shopify/Product/10303521128737',
+    variants: {
+      small: 'gid://shopify/ProductVariant/52522252468513',
+      medium: 'gid://shopify/ProductVariant/52522252501281',
+      large: 'gid://shopify/ProductVariant/52522252534049',
+    },
+  },
+  'covington-kentucky-1886': {
+    productId: 'gid://shopify/Product/10303521653025',
+    variants: {
+      small: 'gid://shopify/ProductVariant/52522253910305',
+      medium: 'gid://shopify/ProductVariant/52522253943073',
+      large: 'gid://shopify/ProductVariant/52522253975841',
+    },
+  },
+  'davenport-iowa-1886': {
+    productId: 'gid://shopify/Product/10303521521953',
+    variants: {
+      small: 'gid://shopify/ProductVariant/52522253517089',
+      medium: 'gid://shopify/ProductVariant/52522253549857',
+      large: 'gid://shopify/ProductVariant/52522253582625',
+    },
+  },
+  'dayton-ohio-1887': {
+    productId: 'gid://shopify/Product/10303522275617',
+    variants: {
+      small: 'gid://shopify/ProductVariant/52522256040225',
+      medium: 'gid://shopify/ProductVariant/52522256072993',
+      large: 'gid://shopify/ProductVariant/52522256105761',
+    },
+  },
+  'detroit-michigan-1889': {
+    productId: 'gid://shopify/Product/10303521915169',
+    variants: {
+      small: 'gid://shopify/ProductVariant/52522254827809',
+      medium: 'gid://shopify/ProductVariant/52522254860577',
+      large: 'gid://shopify/ProductVariant/52522254893345',
+    },
+  },
+  'duluth-minnesota-1884': {
+    productId: 'gid://shopify/Product/10303521947937',
+    variants: {
+      small: 'gid://shopify/ProductVariant/52522254926113',
+      medium: 'gid://shopify/ProductVariant/52522254958881',
+      large: 'gid://shopify/ProductVariant/52522254991649',
+    },
+  },
+  'evansville-indiana-1884': {
+    productId: 'gid://shopify/Product/10303521390881',
+    variants: {
+      small: 'gid://shopify/ProductVariant/52522253123873',
+      medium: 'gid://shopify/ProductVariant/52522253156641',
+      large: 'gid://shopify/ProductVariant/52522253189409',
+    },
+  },
+  'jackson-mississippi-1885': {
+    productId: 'gid://shopify/Product/10303522079009',
+    variants: {
+      small: 'gid://shopify/ProductVariant/52522255352097',
+      medium: 'gid://shopify/ProductVariant/52522255384865',
+      large: 'gid://shopify/ProductVariant/52522255417633',
+    },
+  },
+  'kansas-city-kansas-1889': {
+    productId: 'gid://shopify/Product/10303521587489',
+    variants: {
+      small: 'gid://shopify/ProductVariant/52522253713697',
+      medium: 'gid://shopify/ProductVariant/52522253746465',
+      large: 'gid://shopify/ProductVariant/52522253779233',
+    },
+  },
+  'knoxville-tennessee-1884': {
+    productId: 'gid://shopify/Product/10303522636065',
+    variants: {
+      small: 'gid://shopify/ProductVariant/52522257056033',
+      medium: 'gid://shopify/ProductVariant/52522257088801',
+      large: 'gid://shopify/ProductVariant/52522257121569',
+    },
+  },
+  'lexington-kentucky-1886': {
+    productId: 'gid://shopify/Product/10303521718561',
+    variants: {
+      small: 'gid://shopify/ProductVariant/52522254041377',
+      medium: 'gid://shopify/ProductVariant/52522254074145',
+      large: 'gid://shopify/ProductVariant/52522254106913',
+    },
+  },
+  'lincoln-nebraska-1884': {
+    productId: 'gid://shopify/Product/10303522144545',
+    variants: {
+      small: 'gid://shopify/ProductVariant/52522255647009',
+      medium: 'gid://shopify/ProductVariant/52522255679777',
+      large: 'gid://shopify/ProductVariant/52522255712545',
+    },
+  },
+  'macon-georgia-1884': {
+    productId: 'gid://shopify/Product/10303521292577',
+    variants: {
+      small: 'gid://shopify/ProductVariant/52522252894497',
+      medium: 'gid://shopify/ProductVariant/52522252927265',
+      large: 'gid://shopify/ProductVariant/52522252960033',
+    },
+  },
+  'memphis-tennessee-1888': {
+    productId: 'gid://shopify/Product/10303522668833',
+    variants: {
+      small: 'gid://shopify/ProductVariant/52522257154337',
+      medium: 'gid://shopify/ProductVariant/52522257187105',
+      large: 'gid://shopify/ProductVariant/52522257219873',
+    },
+  },
+  'minneapolis-minnesota-1885': {
+    productId: 'gid://shopify/Product/10303522013473',
+    variants: {
+      small: 'gid://shopify/ProductVariant/52522255155489',
+      medium: 'gid://shopify/ProductVariant/52522255188257',
+      large: 'gid://shopify/ProductVariant/52522255221025',
+    },
+  },
+  'montgomery-alabama-1884': {
+    productId: 'gid://shopify/Product/10303521063201',
+    variants: {
+      small: 'gid://shopify/ProductVariant/52522252271905',
+      medium: 'gid://shopify/ProductVariant/52522252304673',
+      large: 'gid://shopify/ProductVariant/52522252337441',
+    },
+  },
+  'nashville-tennessee-1888': {
+    productId: 'gid://shopify/Product/10303522734369',
+    variants: {
+      small: 'gid://shopify/ProductVariant/52522257285409',
+      medium: 'gid://shopify/ProductVariant/52522257318177',
+      large: 'gid://shopify/ProductVariant/52522257350945',
+    },
+  },
+  'new-haven-connecticut-1886': {
+    productId: 'gid://shopify/Product/10303521194273',
+    variants: {
+      small: 'gid://shopify/ProductVariant/52522252665121',
+      medium: 'gid://shopify/ProductVariant/52522252697889',
+      large: 'gid://shopify/ProductVariant/52522252730657',
+    },
+  },
+  'newport-kentucky-1886': {
+    productId: 'gid://shopify/Product/10303521751329',
+    variants: {
+      small: 'gid://shopify/ProductVariant/52522254139681',
+      medium: 'gid://shopify/ProductVariant/52522254172449',
+      large: 'gid://shopify/ProductVariant/52522254205217',
+    },
+  },
+  'portland-oregon-1889': {
+    productId: 'gid://shopify/Product/10303522341153',
+    variants: {
+      small: 'gid://shopify/ProductVariant/52522256236833',
+      medium: 'gid://shopify/ProductVariant/52522256269601',
+      large: 'gid://shopify/ProductVariant/52522256302369',
+    },
+  },
+  'pueblo-colorado-1883': {
+    productId: 'gid://shopify/Product/10303521161505',
+    variants: {
+      small: 'gid://shopify/ProductVariant/52522252566817',
+      medium: 'gid://shopify/ProductVariant/52522252599585',
+      large: 'gid://shopify/ProductVariant/52522252632353',
+    },
+  },
+  'richmond-virginia-1886': {
+    productId: 'gid://shopify/Product/10303522799905',
+    variants: {
+      small: 'gid://shopify/ProductVariant/52522257482017',
+      medium: 'gid://shopify/ProductVariant/52522257514785',
+      large: 'gid://shopify/ProductVariant/52522257547553',
+    },
+  },
+  'richmond-virginia-1905': {
+    productId: 'gid://shopify/Product/10303522865441',
+    variants: {
+      small: 'gid://shopify/ProductVariant/52522257613089',
+      medium: 'gid://shopify/ProductVariant/52522257645857',
+      large: 'gid://shopify/ProductVariant/52522257678625',
+    },
+  },
+  'rochester-minnesota-1884': {
+    productId: 'gid://shopify/Product/10303522046241',
+    variants: {
+      small: 'gid://shopify/ProductVariant/52522255253793',
+      medium: 'gid://shopify/ProductVariant/52522255286561',
+      large: 'gid://shopify/ProductVariant/52522255319329',
+    },
+  },
+  'salt-lake-city-utah-1884': {
+    productId: 'gid://shopify/Product/10303522767137',
+    variants: {
+      small: 'gid://shopify/ProductVariant/52522257383713',
+      medium: 'gid://shopify/ProductVariant/52522257416481',
+      large: 'gid://shopify/ProductVariant/52522257449249',
+    },
+  },
+  'san-diego-california-1887': {
+    productId: 'gid://shopify/Product/10303521095969',
+    variants: {
+      small: 'gid://shopify/ProductVariant/52522252370209',
+      medium: 'gid://shopify/ProductVariant/52522252402977',
+      large: 'gid://shopify/ProductVariant/52522252435745',
+    },
+  },
+  'savannah-georgia-1884': {
+    productId: 'gid://shopify/Product/10303521325345',
+    variants: {
+      small: 'gid://shopify/ProductVariant/52522252992801',
+      medium: 'gid://shopify/ProductVariant/52522253025569',
+      large: 'gid://shopify/ProductVariant/52522253058337',
+    },
+  },
+  'shreveport-louisiana-1885': {
+    productId: 'gid://shopify/Product/10303521849633',
+    variants: {
+      small: 'gid://shopify/ProductVariant/52522254369057',
+      medium: 'gid://shopify/ProductVariant/52522254401825',
+      large: 'gid://shopify/ProductVariant/52522254434593',
+    },
+  },
+  'sioux-city-iowa-1884': {
+    productId: 'gid://shopify/Product/10303521554721',
+    variants: {
+      small: 'gid://shopify/ProductVariant/52522253615393',
+      medium: 'gid://shopify/ProductVariant/52522253648161',
+      large: 'gid://shopify/ProductVariant/52522253680929',
+    },
+  },
+  'south-bend-indiana-1885': {
+    productId: 'gid://shopify/Product/10303521423649',
+    variants: {
+      small: 'gid://shopify/ProductVariant/52522253222177',
+      medium: 'gid://shopify/ProductVariant/52522253254945',
+      large: 'gid://shopify/ProductVariant/52522253287713',
+    },
+  },
+  'spokane-washington-1888': {
+    productId: 'gid://shopify/Product/10303522898209',
+    variants: {
+      small: 'gid://shopify/ProductVariant/52522257711393',
+      medium: 'gid://shopify/ProductVariant/52522257744161',
+      large: 'gid://shopify/ProductVariant/52522257776929',
+    },
+  },
+  'springfield-missouri-1884': {
+    productId: 'gid://shopify/Product/10303522111777',
+    variants: {
+      small: 'gid://shopify/ProductVariant/52522255548705',
+      medium: 'gid://shopify/ProductVariant/52522255581473',
+      large: 'gid://shopify/ProductVariant/52522255614241',
+    },
+  },
+  'tacoma-washington-1885': {
+    productId: 'gid://shopify/Product/10303522930977',
+    variants: {
+      small: 'gid://shopify/ProductVariant/52522257809697',
+      medium: 'gid://shopify/ProductVariant/52522257842465',
+      large: 'gid://shopify/ProductVariant/52522257875233',
+    },
+  },
+  'terre-haute-indiana-1886': {
+    productId: 'gid://shopify/Product/10303521456417',
+    variants: {
+      small: 'gid://shopify/ProductVariant/52522253320481',
+      medium: 'gid://shopify/ProductVariant/52522253353249',
+      large: 'gid://shopify/ProductVariant/52522253386017',
+    },
+  },
+  'topeka-kansas-1883': {
+    productId: 'gid://shopify/Product/10303521620257',
+    variants: {
+      small: 'gid://shopify/ProductVariant/52522253812001',
+      medium: 'gid://shopify/ProductVariant/52522253844769',
+      large: 'gid://shopify/ProductVariant/52522253877537',
+    },
+  },
+  'wilmington-north-carolina-1884': {
+    productId: 'gid://shopify/Product/10303522177313',
+    variants: {
+      small: 'gid://shopify/ProductVariant/52522255745313',
+      medium: 'gid://shopify/ProductVariant/52522255778081',
+      large: 'gid://shopify/ProductVariant/52522255810849',
+    },
+  },
+  'youngstown-ohio-1884': {
+    productId: 'gid://shopify/Product/10303522308385',
+    variants: {
+      small: 'gid://shopify/ProductVariant/52522256138529',
+      medium: 'gid://shopify/ProductVariant/52522256171297',
+      large: 'gid://shopify/ProductVariant/52522256204065',
+    },
+  },
 };
 
 // Maps fully connected in Simply Framed (print file + Favorite linked for all variants)
 // Only these maps show the print ordering UI on the site
 const FULFILLMENT_READY = new Set([
   // Only maps with 0.843 aspect ratio that match Simply Framed Favorites
+  // --- Batch 1 & 2 ---
   'astoria-oregon-1908',
   'atlanta-georgia-1886',
   'atlanta-georgia-1899',
@@ -501,6 +863,52 @@ const FULFILLMENT_READY = new Set([
   'tampa-florida-1915',
   'tulsa-oklahoma-1915',
   'wichita-kansas-1914',
+  // --- Batch 3 ---
+  'akron-ohio-1888',
+  'augusta-georgia-1884',
+  'baton-rouge-louisiana-1885',
+  'birmingham-alabama-1885',
+  'boston-massachusetts-1867',
+  'canton-ohio-1887',
+  'cedar-rapids-iowa-1884',
+  'charleston-south-carolina-1884',
+  'colorado-springs-colorado-1890',
+  'covington-kentucky-1886',
+  'davenport-iowa-1886',
+  'dayton-ohio-1887',
+  'detroit-michigan-1889',
+  'duluth-minnesota-1884',
+  'evansville-indiana-1884',
+  'jackson-mississippi-1885',
+  'kansas-city-kansas-1889',
+  'knoxville-tennessee-1884',
+  'lexington-kentucky-1886',
+  'lincoln-nebraska-1884',
+  'macon-georgia-1884',
+  'memphis-tennessee-1888',
+  'minneapolis-minnesota-1885',
+  'montgomery-alabama-1884',
+  'nashville-tennessee-1888',
+  'new-haven-connecticut-1886',
+  'newport-kentucky-1886',
+  'portland-oregon-1889',
+  'pueblo-colorado-1883',
+  'richmond-virginia-1886',
+  'richmond-virginia-1905',
+  'rochester-minnesota-1884',
+  'salt-lake-city-utah-1884',
+  'san-diego-california-1887',
+  'savannah-georgia-1884',
+  'shreveport-louisiana-1885',
+  'sioux-city-iowa-1884',
+  'south-bend-indiana-1885',
+  'spokane-washington-1888',
+  'springfield-missouri-1884',
+  'tacoma-washington-1885',
+  'terre-haute-indiana-1886',
+  'topeka-kansas-1883',
+  'wilmington-north-carolina-1884',
+  'youngstown-ohio-1884',
 ]);
 
 export function isPrintEnabled(mapId: string): boolean {
