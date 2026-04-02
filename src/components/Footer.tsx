@@ -27,6 +27,22 @@ export default function Footer() {
           </li>
           <li>
             <Link
+              href="/guides/what-are-sanborn-maps"
+              className="text-[var(--color-cream)]/70 text-sm hover:text-[var(--color-cream)] transition-colors"
+            >
+              What Are Sanborn Maps?
+            </Link>
+          </li>
+          <li>
+            <Link
+              href="/guides/how-to-read-sanborn-maps"
+              className="text-[var(--color-cream)]/70 text-sm hover:text-[var(--color-cream)] transition-colors"
+            >
+              How to Read a Sanborn Map
+            </Link>
+          </li>
+          <li>
+            <Link
               href="/contact"
               className="text-[var(--color-cream)]/70 text-sm hover:text-[var(--color-cream)] transition-colors"
             >

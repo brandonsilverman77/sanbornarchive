@@ -1403,6 +1403,303 @@ footer p {
   }
 }
 
+/* Guide pages */
+.guide-page {
+  min-height: 100vh;
+  padding-top: 6rem;
+  padding-bottom: 4rem;
+}
+
+.guide-content {
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+.guide-header {
+  padding: 2rem 0 2.5rem;
+}
+
+.guide-title {
+  font-family: var(--font-display);
+  font-size: 2.5rem;
+  font-weight: 500;
+  color: var(--color-ink);
+  margin-bottom: 0.75rem;
+  line-height: 1.2;
+}
+
+.guide-subtitle {
+  font-size: 1.15rem;
+  color: var(--color-ink-faded);
+  line-height: 1.5;
+}
+
+.guide-body {
+  font-size: 1.05rem;
+  line-height: 1.75;
+  color: var(--color-ink-light);
+}
+
+.guide-body h2 {
+  font-family: var(--font-display);
+  font-size: 1.6rem;
+  font-weight: 500;
+  color: var(--color-ink);
+  margin-top: 2.5rem;
+  margin-bottom: 0.75rem;
+}
+
+.guide-body h3 {
+  font-family: var(--font-display);
+  font-size: 1.25rem;
+  font-weight: 500;
+  color: var(--color-ink);
+  margin-top: 2rem;
+  margin-bottom: 0.5rem;
+}
+
+.guide-body p {
+  margin-bottom: 1rem;
+}
+
+.guide-lede {
+  font-size: 1.15rem;
+  line-height: 1.8;
+  color: var(--color-ink);
+  margin-bottom: 1.5rem;
+}
+
+.guide-body ul,
+.guide-body ol {
+  margin-bottom: 1.25rem;
+  padding-left: 1.5rem;
+}
+
+.guide-body li {
+  margin-bottom: 0.5rem;
+}
+
+.guide-body a {
+  color: var(--color-accent);
+  text-decoration: none;
+}
+
+.guide-body a:hover {
+  text-decoration: underline;
+}
+
+/* Guide color key (How to Read) */
+.guide-color-key {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  margin: 1.25rem 0 1.5rem;
+  padding: 1.25rem 1.5rem;
+  background: white;
+  border-radius: 6px;
+  box-shadow: 0 1px 3px rgba(44, 36, 22, 0.06);
+}
+
+.guide-color-item {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.guide-color-swatch {
+  width: 2rem;
+  height: 2rem;
+  border-radius: 4px;
+  flex-shrink: 0;
+  border: 1px solid rgba(44, 36, 22, 0.1);
+}
+
+.guide-color-item div {
+  display: flex;
+  flex-direction: column;
+}
+
+.guide-color-item strong {
+  font-size: 0.95rem;
+  color: var(--color-ink);
+}
+
+.guide-color-item span {
+  font-size: 0.85rem;
+  color: var(--color-ink-faded);
+}
+
+/* Guide abbreviation table */
+.guide-abbrev-table {
+  margin: 1.25rem 0 1.5rem;
+  background: white;
+  border-radius: 6px;
+  box-shadow: 0 1px 3px rgba(44, 36, 22, 0.06);
+  overflow: hidden;
+}
+
+.guide-abbrev-row {
+  display: grid;
+  grid-template-columns: 120px 1fr;
+  padding: 0.5rem 1.25rem;
+  font-size: 0.95rem;
+  border-bottom: 1px solid rgba(44, 36, 22, 0.06);
+}
+
+.guide-abbrev-row:last-child {
+  border-bottom: none;
+}
+
+.guide-abbrev-header {
+  background: var(--color-parchment);
+  font-weight: 600;
+  color: var(--color-ink);
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.guide-abbrev-row span:first-child {
+  font-weight: 500;
+  color: var(--color-ink);
+  font-family: 'Courier New', monospace;
+}
+
+/* Guide inline images */
+.guide-image-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+  margin: 2rem 0;
+}
+
+.guide-image-card {
+  text-decoration: none;
+  color: inherit;
+  transition: transform 0.2s ease;
+}
+
+.guide-image-card:hover {
+  transform: translateY(-4px);
+}
+
+.guide-image-caption {
+  display: block;
+  font-size: 0.8rem;
+  color: var(--color-ink-faded);
+  text-align: center;
+  margin-top: 0.5rem;
+}
+
+/* Guide CTA */
+.guide-cta {
+  margin-top: 3rem;
+  padding: 2rem;
+  background: var(--color-parchment);
+  border-radius: 6px;
+  text-align: center;
+}
+
+.guide-cta h3 {
+  font-family: var(--font-display);
+  font-size: 1.35rem;
+  font-weight: 500;
+  color: var(--color-ink);
+  margin-bottom: 0.5rem;
+  margin-top: 0;
+}
+
+.guide-cta p {
+  font-size: 0.95rem;
+  color: var(--color-ink-faded);
+  margin-bottom: 1.25rem;
+}
+
+.guide-cta-links {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.guide-cta-btn {
+  display: inline-block;
+  padding: 0.6rem 1.5rem;
+  background: var(--color-accent);
+  color: white;
+  text-decoration: none;
+  border-radius: 4px;
+  font-size: 0.9rem;
+  font-weight: 500;
+  transition: background 0.2s ease;
+}
+
+.guide-cta-btn:hover {
+  background: #6d360f;
+  text-decoration: none;
+}
+
+.guide-cta-btn-secondary {
+  background: transparent;
+  color: var(--color-accent);
+  border: 1px solid var(--color-accent);
+}
+
+.guide-cta-btn-secondary:hover {
+  background: var(--color-accent);
+  color: white;
+}
+
+/* Guide related links */
+.guide-related {
+  margin-top: 2.5rem;
+  padding-top: 2rem;
+  border-top: 1px solid var(--color-parchment);
+}
+
+.guide-related h3 {
+  font-family: var(--font-display);
+  font-size: 1.15rem;
+  font-weight: 500;
+  color: var(--color-ink);
+  margin-bottom: 0.75rem;
+  margin-top: 0;
+}
+
+.guide-related ul {
+  list-style: none;
+  padding: 0;
+}
+
+.guide-related li {
+  margin-bottom: 0.5rem;
+}
+
+.guide-related a {
+  color: var(--color-accent);
+  text-decoration: none;
+  font-size: 0.95rem;
+}
+
+.guide-related a:hover {
+  text-decoration: underline;
+}
+
+@media (max-width: 580px) {
+  .guide-title {
+    font-size: 1.85rem;
+  }
+  .guide-image-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .guide-abbrev-row {
+    grid-template-columns: 100px 1fr;
+    padding: 0.5rem 1rem;
+    font-size: 0.85rem;
+  }
+}
+
 /* State pages */
 .state-page {
   min-height: 100vh;
