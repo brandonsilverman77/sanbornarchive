@@ -43,7 +43,7 @@ export default function Navigation() {
           </li>
           <li>
             <Link
-              href="/#about"
+              href="/about"
               className="font-body text-sm md:text-[0.95rem] text-[var(--color-ink-light)] tracking-wide hover:text-[var(--color-accent)] transition-colors"
             >
               About
