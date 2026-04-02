@@ -9,9 +9,10 @@ import { useCart } from '@/context/CartContext';
 
 interface MapDetailClientProps {
   map: MapImage;
+  relatedMaps?: MapImage[];
 }
 
-export default function MapDetailClient({ map }: MapDetailClientProps) {
+export default function MapDetailClient({ map, relatedMaps = [] }: MapDetailClientProps) {
   const [zoomPosition, setZoomPosition] = useState({ x: 50, y: 50 });
   const [isZooming, setIsZooming] = useState(false);
   const [selectedSize, setSelectedSize] = useState<PrintSizeId>('medium');
@@ -21,6 +22,31 @@ export default function MapDetailClient({ map }: MapDetailClientProps) {
   const printEnabled = isPrintEnabled(map.id);
   const printSizes = printEnabled ? getPrintSizes(map.aspectRatio) : [];
   const currentSize = printSizes.find((s) => s.id === selectedSize);
+
+  const relatedSection = relatedMaps.length > 0 ? (
+    <section className="related-maps">
+      <h2 className="related-maps-title">More Maps from {map.state}</h2>
+      <div className="related-maps-grid">
+        {relatedMaps.map((related) => (
+          <Link key={related.id} href={`/map/${related.id}`} className="related-map-card">
+            <div className="related-map-image">
+              <Image
+                src={related.thumbnail}
+                alt={`${related.city}, ${related.state} (${related.year})`}
+                width={300}
+                height={360}
+                style={{ width: '100%', height: 'auto', display: 'block' }}
+              />
+            </div>
+            <div className="related-map-info">
+              <span className="related-map-city">{related.city}</span>
+              <span className="related-map-year">{related.year}</span>
+            </div>
+          </Link>
+        ))}
+      </div>
+    </section>
+  ) : null;
 
   const handleAddToCart = async () => {
     const variantId = getVariantId(map.id, selectedSize);
@@ -224,6 +250,7 @@ export default function MapDetailClient({ map }: MapDetailClientProps) {
             </div>
           </div>
         </div>
+        {relatedSection}
       </main>
     );
   }
@@ -305,6 +332,7 @@ export default function MapDetailClient({ map }: MapDetailClientProps) {
           </footer>
         </div>
       </main>
+      {relatedSection}
     </div>
   );
 }

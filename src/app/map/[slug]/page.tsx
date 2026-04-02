@@ -62,12 +62,23 @@ export default async function MapPage({ params }: PageProps) {
   const productJsonLd = getProductJsonLd(map);
   const printEnabled = isPrintEnabled(map.id);
 
+  // Related maps from the same state (excluding current, max 6, deduplicated)
+  const seenIds = new Set<string>([map.id]);
+  const relatedMaps = maps
+    .filter((m) => {
+      if (m.state !== map.state || seenIds.has(m.id)) return false;
+      seenIds.add(m.id);
+      return true;
+    })
+    .sort((a, b) => Math.abs(a.year - map.year) - Math.abs(b.year - map.year))
+    .slice(0, 6);
+
   return (
     <>
       <JsonLd data={getMapJsonLd(map)} />
       {productJsonLd && <JsonLd data={productJsonLd} />}
       {printEnabled && <JsonLd data={getFaqJsonLd()} />}
-      <MapDetailClient map={map} />
+      <MapDetailClient map={map} relatedMaps={relatedMaps} />
     </>
   );
 }
