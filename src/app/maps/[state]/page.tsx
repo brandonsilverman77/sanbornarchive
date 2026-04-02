@@ -49,6 +49,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   const stateMaps = getStateMaps(state);
   const cities = new Set(stateMaps.map((m) => m.city));
   const cityList = Array.from(cities).slice(0, 5).join(', ');
+  const ogMap = stateMaps.find((m) => m.favorite) || stateMaps[0];
 
   const title = `${state} — Sanborn Fire Insurance Maps`;
   const description = `Browse ${stateMaps.length} Sanborn Fire Insurance Maps from ${state}, including ${cityList}, and more. High-resolution scans free for personal use.`;
@@ -61,6 +62,16 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
       description,
       type: 'website',
       url: `${SITE_URL}/maps/${stateSlug}`,
+      images: ogMap
+        ? [
+            {
+              url: ogMap.medium,
+              width: 1200,
+              height: Math.round(1200 / ogMap.aspectRatio),
+              alt: `Sanborn Fire Insurance Map: ${ogMap.city}, ${state} (${ogMap.year})`,
+            },
+          ]
+        : undefined,
     },
     alternates: {
       canonical: `${SITE_URL}/maps/${stateSlug}`,

@@ -19,6 +19,14 @@ export default function Footer() {
           </li>
           <li>
             <Link
+              href="/maps"
+              className="text-[var(--color-cream)]/70 text-sm hover:text-[var(--color-cream)] transition-colors"
+            >
+              Browse by State
+            </Link>
+          </li>
+          <li>
+            <Link
               href="/contact"
               className="text-[var(--color-cream)]/70 text-sm hover:text-[var(--color-cream)] transition-colors"
             >

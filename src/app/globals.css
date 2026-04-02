@@ -1304,6 +1304,105 @@ footer p {
   background: var(--color-accent-light);
 }
 
+/* Maps index page */
+.maps-index-page {
+  min-height: 100vh;
+  padding-top: 6rem;
+  padding-bottom: 4rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.maps-index-header {
+  padding: 2rem 2rem 2.5rem;
+  text-align: center;
+}
+
+.maps-index-title {
+  font-family: var(--font-display);
+  font-size: 3rem;
+  font-weight: 500;
+  color: var(--color-ink);
+  margin-bottom: 0.5rem;
+}
+
+.maps-index-subtitle {
+  font-size: 1.05rem;
+  color: var(--color-ink-faded);
+}
+
+.maps-index-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+  padding: 0 2rem;
+}
+
+.maps-index-card {
+  text-decoration: none;
+  color: inherit;
+  background: white;
+  border-radius: 4px;
+  overflow: hidden;
+  box-shadow: 0 1px 3px rgba(44, 36, 22, 0.06), 0 4px 12px rgba(44, 36, 22, 0.04);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.maps-index-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 4px 12px rgba(44, 36, 22, 0.1), 0 8px 24px rgba(44, 36, 22, 0.08);
+}
+
+.maps-index-card-previews {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 2px;
+  background: var(--color-parchment);
+}
+
+.maps-index-card-thumb {
+  aspect-ratio: 5 / 6;
+  overflow: hidden;
+}
+
+.maps-index-card-info {
+  padding: 1rem 1.25rem;
+}
+
+.maps-index-card-state {
+  font-family: var(--font-display);
+  font-size: 1.35rem;
+  font-weight: 500;
+  color: var(--color-ink);
+  margin-bottom: 0.25rem;
+}
+
+.maps-index-card-meta {
+  font-size: 0.9rem;
+  color: var(--color-ink-faded);
+}
+
+.maps-index-card-prints {
+  font-size: 0.8rem;
+  color: var(--color-accent);
+  margin-top: 0.25rem;
+}
+
+@media (max-width: 900px) {
+  .maps-index-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 580px) {
+  .maps-index-grid {
+    grid-template-columns: 1fr;
+  }
+  .maps-index-title {
+    font-size: 2.25rem;
+  }
+}
+
 /* State pages */
 .state-page {
   min-height: 100vh;

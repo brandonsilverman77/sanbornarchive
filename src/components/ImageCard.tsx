@@ -33,7 +33,7 @@ export default function ImageCard({ map }: ImageCardProps) {
         }}>
           <Image
             src={map.thumbnail}
-            alt={`${map.city}, ${map.state}`}
+            alt={`Sanborn Fire Insurance Map: ${map.city}, ${map.state} (${map.year})`}
             fill
             style={{ objectFit: 'cover' }}
             sizes="(max-width: 640px) 50vw, (max-width: 1024px) 33vw, 25vw"

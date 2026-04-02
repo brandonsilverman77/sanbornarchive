@@ -62,7 +62,7 @@ export default function PrintsGallery({ maps, startingPrice }: PrintsGalleryProp
             <div className="prints-card-image">
               <Image
                 src={map.medium}
-                alt={`${map.city}, ${map.state} - ${map.year} Sanborn Map`}
+                alt={`Sanborn Fire Insurance Map: ${map.city}, ${map.state} (${map.year})`}
                 width={600}
                 height={720}
                 style={{
