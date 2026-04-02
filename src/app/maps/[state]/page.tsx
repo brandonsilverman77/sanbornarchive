@@ -105,11 +105,11 @@ export default async function StatePage({ params }: PageProps) {
       <Navigation />
       <main className="state-page">
         <div className="state-header">
-          <nav className="state-breadcrumb">
+          <div className="state-breadcrumb">
             <Link href="/">Home</Link>
             <span className="state-breadcrumb-sep">/</span>
             <span>{state}</span>
-          </nav>
+          </div>
           <h1 className="state-title">{state}</h1>
           <p className="state-subtitle">
             {stateMaps.length} Sanborn {stateMaps.length === 1 ? 'map' : 'maps'} from {cities.size} {cities.size === 1 ? 'city' : 'cities'}
