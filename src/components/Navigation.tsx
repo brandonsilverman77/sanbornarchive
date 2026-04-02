@@ -38,7 +38,7 @@ export default function Navigation() {
               href="#explore"
               className="font-body text-sm md:text-[0.95rem] text-[var(--color-ink-light)] tracking-wide hover:text-[var(--color-accent)] transition-colors"
             >
-              Explore
+              Archive
             </Link>
           </li>
           <li>
@@ -54,7 +54,7 @@ export default function Navigation() {
               href="/prints"
               className="font-body text-sm md:text-[0.95rem] text-[var(--color-ink-light)] tracking-wide hover:text-[var(--color-accent)] transition-colors"
             >
-              Prints
+              Framed Prints
             </Link>
           </li>
         </ul>
