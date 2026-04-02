@@ -50,6 +50,15 @@ export default function AboutPage() {
             history.
           </p>
 
+          <div className="about-video">
+            <iframe
+              src="https://www.youtube.com/embed/LnCZ-flnT1E"
+              title="The Sanborn Fire Insurance Maps"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowFullScreen
+            />
+          </div>
+
           <p>
             But it&apos;s the title pages that stopped me in my tracks. Each one
             is a hand-lettered work of art — bold Victorian typography, ornate
