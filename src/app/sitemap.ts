@@ -20,6 +20,15 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.8,
     }));
 
+  // State landing pages
+  const states = new Set(maps.map((m) => m.state));
+  const stateEntries: MetadataRoute.Sitemap = Array.from(states).map((state) => ({
+    url: `${SITE_URL}/maps/${state.toLowerCase().replace(/ /g, '-')}`,
+    lastModified: new Date(),
+    changeFrequency: 'monthly',
+    priority: 0.8,
+  }));
+
   return [
     {
       url: SITE_URL,
@@ -33,6 +42,13 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: 'weekly',
       priority: 0.9,
     },
+    {
+      url: `${SITE_URL}/about`,
+      lastModified: new Date(),
+      changeFrequency: 'monthly',
+      priority: 0.6,
+    },
+    ...stateEntries,
     ...mapEntries,
     ...printEntries,
   ];

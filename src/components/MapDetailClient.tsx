@@ -10,9 +10,10 @@ import { useCart } from '@/context/CartContext';
 interface MapDetailClientProps {
   map: MapImage;
   relatedMaps?: MapImage[];
+  stateSlug?: string;
 }
 
-export default function MapDetailClient({ map, relatedMaps = [] }: MapDetailClientProps) {
+export default function MapDetailClient({ map, relatedMaps = [], stateSlug }: MapDetailClientProps) {
   const [zoomPosition, setZoomPosition] = useState({ x: 50, y: 50 });
   const [isZooming, setIsZooming] = useState(false);
   const [selectedSize, setSelectedSize] = useState<PrintSizeId>('medium');
@@ -25,14 +26,21 @@ export default function MapDetailClient({ map, relatedMaps = [] }: MapDetailClie
 
   const relatedSection = relatedMaps.length > 0 ? (
     <section className="related-maps">
-      <h2 className="related-maps-title">More Maps from {map.state}</h2>
+      <div className="related-maps-header">
+        <h2 className="related-maps-title">More Maps from {map.state}</h2>
+        {stateSlug && (
+          <Link href={`/maps/${stateSlug}`} className="related-maps-view-all">
+            View all →
+          </Link>
+        )}
+      </div>
       <div className="related-maps-grid">
         {relatedMaps.map((related) => (
           <Link key={related.id} href={`/map/${related.id}`} className="related-map-card">
             <div className="related-map-image">
               <Image
                 src={related.thumbnail}
-                alt={`${related.city}, ${related.state} (${related.year})`}
+                alt={`Sanborn Fire Insurance Map: ${related.city}, ${related.state} (${related.year})`}
                 width={300}
                 height={360}
                 style={{ width: '100%', height: 'auto', display: 'block' }}

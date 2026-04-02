@@ -61,6 +61,32 @@ export default async function MapPage({ params }: PageProps) {
 
   const productJsonLd = getProductJsonLd(map);
   const printEnabled = isPrintEnabled(map.id);
+  const stateSlug = map.state.toLowerCase().replace(/ /g, '-');
+
+  const breadcrumbJsonLd = {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+      {
+        '@type': 'ListItem',
+        position: 1,
+        name: 'Home',
+        item: SITE_URL,
+      },
+      {
+        '@type': 'ListItem',
+        position: 2,
+        name: map.state,
+        item: `${SITE_URL}/maps/${stateSlug}`,
+      },
+      {
+        '@type': 'ListItem',
+        position: 3,
+        name: `${map.city} (${map.year})`,
+        item: `${SITE_URL}/map/${map.id}`,
+      },
+    ],
+  };
 
   // Related maps from the same state (excluding current, max 6, deduplicated)
   const seenIds = new Set<string>([map.id]);
@@ -75,10 +101,11 @@ export default async function MapPage({ params }: PageProps) {
 
   return (
     <>
+      <JsonLd data={breadcrumbJsonLd} />
       <JsonLd data={getMapJsonLd(map)} />
       {productJsonLd && <JsonLd data={productJsonLd} />}
       {printEnabled && <JsonLd data={getFaqJsonLd()} />}
-      <MapDetailClient map={map} relatedMaps={relatedMaps} />
+      <MapDetailClient map={map} relatedMaps={relatedMaps} stateSlug={stateSlug} />
     </>
   );
 }
