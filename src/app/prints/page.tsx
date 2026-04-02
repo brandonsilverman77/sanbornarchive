@@ -12,8 +12,14 @@ export const metadata: Metadata = {
 };
 
 export default function PrintsPage() {
+  const seen = new Set<string>();
   const printableMaps = maps
-    .filter((m) => isPrintEnabled(m.id))
+    .filter((m) => {
+      if (!isPrintEnabled(m.id)) return false;
+      if (seen.has(m.id)) return false;
+      seen.add(m.id);
+      return true;
+    })
     .sort((a, b) => a.state.localeCompare(b.state) || a.city.localeCompare(b.city) || a.year - b.year);
 
   const startingPrice = PRINT_SIZE_TIERS[0].price;
