@@ -838,6 +838,71 @@ footer p {
   color: var(--color-ink-faded);
 }
 
+/* Print FAQ */
+.print-page-faq {
+  margin-top: 2rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--color-cream-dark);
+}
+
+.print-page-faq-title {
+  font-family: var(--font-display);
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--color-ink);
+  margin-bottom: 1rem;
+}
+
+.print-faq-item {
+  border-bottom: 1px solid var(--color-cream-dark);
+}
+
+.print-faq-item summary {
+  padding: 0.85rem 0;
+  font-family: var(--font-display);
+  font-size: 0.95rem;
+  font-weight: 500;
+  color: var(--color-ink);
+  cursor: pointer;
+  list-style: none;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.print-faq-item summary::after {
+  content: '+';
+  font-size: 1.2rem;
+  color: var(--color-ink-faded);
+  transition: transform 0.2s ease;
+}
+
+.print-faq-item[open] summary::after {
+  content: '−';
+}
+
+.print-faq-item summary::-webkit-details-marker {
+  display: none;
+}
+
+.print-faq-item p {
+  padding: 0 0 1rem;
+  font-size: 0.88rem;
+  color: var(--color-ink-light);
+  line-height: 1.6;
+}
+
+.print-faq-item a {
+  color: var(--color-accent);
+  text-decoration: none;
+  border-bottom: 1px solid transparent;
+  transition: border-color 0.15s ease;
+}
+
+.print-faq-item a:hover {
+  border-bottom-color: var(--color-accent);
+}
+
 /* Print page responsive */
 @media (max-width: 900px) {
   .print-page-content {
@@ -1182,9 +1247,53 @@ footer p {
   margin: 0 auto;
 }
 
+.prints-filters {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 2rem;
+  margin-bottom: 2rem;
+}
+
+.prints-filter-row {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.prints-filter-label {
+  font-size: 0.9rem;
+  color: var(--color-ink-faded);
+}
+
+.prints-filter-select {
+  font-family: var(--font-body);
+  font-size: 0.95rem;
+  padding: 0.5rem 2rem 0.5rem 0.75rem;
+  border: 1px solid var(--color-parchment);
+  border-radius: 4px;
+  background: white;
+  color: var(--color-ink);
+  cursor: pointer;
+  appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg width='10' height='6' viewBox='0 0 10 6' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1 1l4 4 4-4' stroke='%234a3f2f' stroke-width='1.5' fill='none'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 0.75rem center;
+}
+
+.prints-filter-select:focus {
+  outline: none;
+  border-color: var(--color-accent);
+}
+
+.prints-filter-count {
+  font-size: 0.9rem;
+  color: var(--color-ink-faded);
+}
+
 .prints-grid {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: repeat(3, 1fr);
   gap: 2.5rem;
   padding: 0 2rem;
 }
@@ -1243,6 +1352,13 @@ footer p {
 
   .prints-title {
     font-size: 2.5rem;
+  }
+
+  .prints-filters {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5rem;
+    padding: 0 1.5rem;
   }
 
   .prints-grid {

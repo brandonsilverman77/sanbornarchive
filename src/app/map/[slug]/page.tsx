@@ -2,7 +2,8 @@ import { Metadata } from 'next';
 import { notFound } from 'next/navigation';
 import { maps } from '@/data/maps';
 import { SITE_URL } from '@/lib/constants';
-import { getMapJsonLd } from '@/lib/jsonld';
+import { getMapJsonLd, getProductJsonLd, getFaqJsonLd } from '@/lib/jsonld';
+import { isPrintEnabled } from '@/lib/shopify-products';
 import JsonLd from '@/components/JsonLd';
 import MapDetailClient from '@/components/MapDetailClient';
 
@@ -58,9 +59,14 @@ export default async function MapPage({ params }: PageProps) {
     notFound();
   }
 
+  const productJsonLd = getProductJsonLd(map);
+  const printEnabled = isPrintEnabled(map.id);
+
   return (
     <>
       <JsonLd data={getMapJsonLd(map)} />
+      {productJsonLd && <JsonLd data={productJsonLd} />}
+      {printEnabled && <JsonLd data={getFaqJsonLd()} />}
       <MapDetailClient map={map} />
     </>
   );

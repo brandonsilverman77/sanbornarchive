@@ -1,10 +1,9 @@
 import type { Metadata } from 'next';
-import Image from 'next/image';
-import Link from 'next/link';
 import Navigation from '@/components/Navigation';
 import Footer from '@/components/Footer';
 import { maps } from '@/data/maps';
 import { isPrintEnabled, PRINT_SIZE_TIERS } from '@/lib/shopify-products';
+import PrintsGallery from '@/components/PrintsGallery';
 
 export const metadata: Metadata = {
   title: 'Archival Prints',
@@ -13,7 +12,9 @@ export const metadata: Metadata = {
 };
 
 export default function PrintsPage() {
-  const printableMaps = maps.filter((m) => isPrintEnabled(m.id));
+  const printableMaps = maps
+    .filter((m) => isPrintEnabled(m.id))
+    .sort((a, b) => a.state.localeCompare(b.state) || a.city.localeCompare(b.city) || a.year - b.year);
 
   const startingPrice = PRINT_SIZE_TIERS[0].price;
 
@@ -31,34 +32,7 @@ export default function PrintsPage() {
           </p>
         </div>
 
-        <div className="prints-grid">
-          {printableMaps.map((map) => (
-            <Link
-              key={map.id}
-              href={`/prints/${map.id}`}
-              className="prints-card"
-            >
-              <div className="prints-card-image">
-                <Image
-                  src={map.medium}
-                  alt={`${map.city}, ${map.state} - ${map.year} Sanborn Map`}
-                  width={600}
-                  height={720}
-                  style={{
-                    width: '100%',
-                    height: 'auto',
-                    objectFit: 'cover',
-                  }}
-                />
-              </div>
-              <div className="prints-card-info">
-                <h2>{map.city}, {map.state}</h2>
-                <p className="prints-card-year">{map.year}</p>
-                <p className="prints-card-price">From ${startingPrice}</p>
-              </div>
-            </Link>
-          ))}
-        </div>
+        <PrintsGallery maps={printableMaps} startingPrice={startingPrice} />
       </main>
       <Footer />
     </>

@@ -167,6 +167,31 @@ export default function PrintDetailClient({ map }: PrintDetailClientProps) {
               Ships in 7–10 business days. Free shipping on orders over $200.
             </p>
           </div>
+
+          {/* FAQ */}
+          <div className="print-page-faq">
+            <h3 className="print-page-faq-title">Frequently Asked Questions</h3>
+            <details className="print-faq-item">
+              <summary>What materials are used?</summary>
+              <p>Prints are produced using giclée printing on 100% cotton, acid-free archival paper with fade-resistant inks. Frames are sustainably sourced Gallery Natural hardwood with acid-free conservation matting and crystal-clear, UV-protective acrylic glazing.</p>
+            </details>
+            <details className="print-faq-item">
+              <summary>How long does shipping take?</summary>
+              <p>Each print is custom framed to order and ships in 7–10 business days. Shipping is free on orders over $200.</p>
+            </details>
+            <details className="print-faq-item">
+              <summary>What sizes are available?</summary>
+              <p>Prints are available in three sizes: Small (12&quot; longest edge, $139), Medium (18&quot; longest edge, $299), and Large (24&quot; longest edge, $465). All sizes include the frame, mat, glazing, and mounting hardware.</p>
+            </details>
+            <details className="print-faq-item">
+              <summary>What is your return policy?</summary>
+              <p>We accept returns within 30 days of delivery for damaged or defective items. Since each print is custom framed to order, we cannot accept returns for change of mind. Please contact us if your order arrives damaged.</p>
+            </details>
+            <details className="print-faq-item">
+              <summary>Who frames the prints?</summary>
+              <p>All prints are custom framed by <a href="https://www.simplyframed.com" target="_blank" rel="noopener noreferrer">Simply Framed</a>, a premium framing studio trusted by museums and galleries nationwide. Each frame is handmade in the USA.</p>
+            </details>
+          </div>
         </div>
       </div>
     </main>
