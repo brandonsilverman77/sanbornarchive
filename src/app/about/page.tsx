@@ -29,7 +29,14 @@ export default function AboutPage() {
               small collection
             </a>{' '}
             of incredible typography from the Sanborn Fire Insurance Maps.
-            I had never seen anything like them, and I became obsessed.
+            I had never seen anything like them, and I became obsessed. I even used them as inspiration for my{' '}
+            <a
+              href="https://www.youtube.com/watch?v=jzxpFSbhTIY"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              wedding invitations
+            </a>.
           </p>
 
           <h2>The Sanborn Map Company</h2>
