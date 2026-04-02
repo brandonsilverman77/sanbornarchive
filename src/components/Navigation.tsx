@@ -35,7 +35,7 @@ export default function Navigation() {
         <ul className="flex gap-6 md:gap-10 list-none">
           <li>
             <Link
-              href="#explore"
+              href="/#explore"
               className="font-body text-sm md:text-[0.95rem] text-[var(--color-ink-light)] tracking-wide hover:text-[var(--color-accent)] transition-colors"
             >
               Archive
@@ -43,7 +43,7 @@ export default function Navigation() {
           </li>
           <li>
             <Link
-              href="#about"
+              href="/#about"
               className="font-body text-sm md:text-[0.95rem] text-[var(--color-ink-light)] tracking-wide hover:text-[var(--color-accent)] transition-colors"
             >
               About
