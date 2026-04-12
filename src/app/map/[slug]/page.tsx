@@ -1,5 +1,5 @@
 import { Metadata } from 'next';
-import { notFound } from 'next/navigation';
+import { notFound, redirect } from 'next/navigation';
 import { maps } from '@/data/maps';
 import { SITE_URL } from '@/lib/constants';
 import { getMapJsonLd, getProductJsonLd, getFaqJsonLd } from '@/lib/jsonld';
@@ -51,11 +51,25 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   };
 }
 
+// Try to find a map with the same city-state but different year
+function findClosestMap(slug: string) {
+  // Strip year from end: "reading-pennsylvania-1933" → "reading-pennsylvania"
+  const parts = slug.match(/^(.+)-(\d{4})$/);
+  if (!parts) return null;
+  const cityStatePrefix = parts[1];
+  return maps.find((m) => m.id.startsWith(cityStatePrefix + '-'));
+}
+
 export default async function MapPage({ params }: PageProps) {
   const { slug } = await params;
-  const map = maps.find((m) => m.id === slug);
+  let map = maps.find((m) => m.id === slug);
 
   if (!map) {
+    // Try fuzzy match for old URLs with different years
+    const closest = findClosestMap(slug);
+    if (closest) {
+      redirect(`/map/${closest.id}`);
+    }
     notFound();
   }
 
